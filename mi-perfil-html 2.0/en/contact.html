@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Contact Josep Pérez Morente. Send a message securely." />
+  <meta name="theme-color" content="#2e1a47" />
+  <title>Contact | Josep Pérez Morente</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/contacto.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="canonical" href="contact.html" />
+  <link rel="alternate" hreflang="es" href="../es/contacto.html" />
+  <link rel="alternate" hreflang="en" href="contact.html" />
+  <link rel="alternate" hreflang="ca" href="../va/contacte.html" />
+  <link rel="alternate" hreflang="ja" href="../jp/contact.html" />
+  <link rel="alternate" hreflang="x-default" href="../index.html" />
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header class="hero">
+    <div class="contenido-hero">
+      <h1><span>📬 Send a message</span></h1>
+      <p class="subtitulo">Your message may ascend to Olympus. Share it with Athena!</p>
+      <nav>
+        <ul class="menu-hero">
+          <li><a href="index.html#about-me">About Me</a></li>
+          <li><a href="index.html#skills">Skills</a></li>
+          <li><a href="index.html#interests">Interests</a></li>
+          <li><a href="index.html#projects">Projects</a></li>
+          <li><a href="index.html">Home</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Language">
+        <ul class="idiomas">
+          <li><a href="../es/contacto.html" lang="es">ES</a></li>
+          <li><a href="contact.html" lang="en">EN</a></li>
+          <li><a href="../va/contacte.html" lang="ca">CA</a></li>
+          <li><a href="../jp/contact.html" lang="ja">JA</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="formulario-envio" aria-label="Contact Form">
+      <form id="formulario">
+        <input type="hidden" name="idioma" value="English" />
+
+        <label for="nombre">👤 Name:</label>
+        <input type="text" id="nombre" name="nombre" required autocomplete="name" />
+
+        <label for="email">📧 Email:</label>
+        <input type="email" id="email" name="email" required autocomplete="email" />
+
+        <label for="mensaje">📝 Message:</label>
+        <textarea id="mensaje" name="mensaje" rows="6" required></textarea>
+
+        <button type="submit">⚡ Send to Olympus</button>
+      </form>
+      <div id="estado" class="mensaje-estado" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <footer class="fade-in">
+    <p>© 2025 Josep Pérez Morente</p>
+    <p class="redes">
+      <a href="https://github.com/Luciuss4" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a> ·
+      <a href="https://linkedin.com/in/Luciuss4" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i> LinkedIn</a> ·
+      <a href="https://discord.com/users/443479189597716480" target="_blank" rel="noopener noreferrer"><i class="fab fa-discord"></i> Discord</a>
+    </p>
+  </footer>
+
+  <script>
+    const estat = document.getElementById("estado");
+    const webhookURL = window.CONFIG_WEBHOOK_URL || "";
+    const mention = window.CONFIG_MENTION || "";
+
+    document.getElementById("formulario").addEventListener("submit", async function (e) {
+      e.preventDefault();
+
+      const nom = document.getElementById("nombre").value.trim();
+      const correu = document.getElementById("email").value.trim();
+      const missatge = document.getElementById("mensaje").value.trim();
+      const idioma = "English";
+
+      if (!nom || !correu || !missatge) {
+        estat.textContent = "⚠️ Please fill in all fields.";
+        estat.className = "mensaje-estado mensaje-error";
+        estat.style.display = "block";
+        return;
+      }
+
+      if (webhookURL) {
+        const embed = {
+          content: `${mention} ⚡ **New message!**`,
+          embeds: [{
+            title: "Message received",
+            color: 0x9B59B6,
+            fields: [
+              { name: "Language", value: idioma, inline: true },
+              { name: "Name", value: nom, inline: true },
+              { name: "Email", value: correu, inline: true },
+              { name: "Message", value: missatge }
+            ],
+            timestamp: new Date().toISOString()
+          }]
+        };
+
+        fetch(webhookURL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(embed)
+        })
+        .then(() => {
+          estat.textContent = "✨ Thank you! Your message was sent.";
+          estat.className = "mensaje-estado mensaje-exito";
+          estat.style.display = "block";
+          document.getElementById("formulario").reset();
+        })
+        .catch(err => {
+          estat.textContent = "❌ Error sending message: " + err.message;
+          estat.className = "mensaje-estado mensaje-error";
+          estat.style.display = "block";
+        });
+      } else {
+        const text = `Language: ${idioma}\nName: ${nom}\nEmail: ${correu}\nMessage:\n${missatge}`;
+        try {
+          await navigator.clipboard.writeText(text);
+          estat.textContent = "✨ Your message was copied. Paste it in your favourite app.";
+          estat.className = "mensaje-estado mensaje-exito";
+          estat.style.display = "block";
+          document.getElementById("formulario").reset();
+        } catch (err) {
+          estat.textContent = "❌ Could not copy the message: " + err.message;
+          estat.className = "mensaje-estado mensaje-error";
+          estat.style.display = "block";
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>

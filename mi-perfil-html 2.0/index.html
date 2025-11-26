@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Selecciona tu idioma para explorar el portfolio de Josep Pérez Morente." />
+  <meta name="theme-color" content="#2e1a47" />
+  <title>Bienvenido | Josep Pérez Morente</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/idioma.css" />
+  <link rel="alternate" hreflang="es" href="es/index.html" />
+  <link rel="alternate" hreflang="en" href="en/index.html" />
+  <link rel="alternate" hreflang="ca" href="va/index.html" />
+  <link rel="alternate" hreflang="ja" href="jp/index.html" />
+  <link rel="alternate" hreflang="x-default" href="index.html" />
+</head>
+<body>
+  <div class="selector-idioma">
+    <h1> Elige tu idioma / Choose your language / 言語を選択</h1>
+    <div class="botones">
+      <a href="es/index.html" class="btn">🇪🇸 Español</a>
+      <a href="va/index.html" class="btn">🇻🇦 Valencià</a>
+      <a href="en/index.html" class="btn">🇬🇧 English</a>
+      <a href="jp/index.html" class="btn">🇯🇵 日本語</a>
+    </div>
+  </div>
+
+  <button id="toggle-tema" class="tema-toggle" aria-pressed="false">Cambiar tema</button>
+  <script>
+    (function(){
+      var temaGuardado = localStorage.getItem('tema');
+      if (temaGuardado) document.documentElement.setAttribute('data-theme', temaGuardado);
+      var btn = document.getElementById('toggle-tema');
+      if (!btn) return;
+      var claro = document.documentElement.getAttribute('data-theme') === 'light';
+      btn.textContent = claro ? '☀️ Cambiar tema' : '🌙 Cambiar tema';
+      btn.setAttribute('aria-pressed', claro ? 'true' : 'false');
+      btn.addEventListener('click', function(){
+        var actual = document.documentElement.getAttribute('data-theme');
+        var nuevo = actual === 'light' ? 'dark' : 'light';
+        if (nuevo === 'dark') document.documentElement.removeAttribute('data-theme'); else document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('tema', nuevo);
+        btn.setAttribute('aria-pressed', nuevo === 'light' ? 'true' : 'false');
+        btn.textContent = nuevo === 'light' ? '☀️ Cambiar tema' : '🌙 Cambiar tema';
+      });
+      var secciones = document.querySelectorAll('.reveal');
+      if (secciones.length) {
+        var io = new IntersectionObserver(function(entries){ entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('is-visible'); } }); }, { threshold: 0.15 });
+        secciones.forEach(function(s){ io.observe(s); });
+      }
+      var enlaces = document.querySelectorAll('.menu-hero a');
+      if (enlaces.length) {
+        var mapa = Array.prototype.map.call(enlaces, function(a){ var id = a.getAttribute('href').replace('#',''); return {a:a, id:id, el:document.getElementById(id)}; });
+        window.addEventListener('scroll', function(){ var pos = window.scrollY + 100; var activo = null; mapa.forEach(function(m){ if(m.el && m.el.offsetTop <= pos) activo = m; }); enlaces.forEach(function(a){ a.classList.remove('active'); }); if(activo) activo.a.classList.add('active'); });
+      }
+      
+    })();
+  </script>
+
+  </body>
+  </html>
