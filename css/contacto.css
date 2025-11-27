@@ -68,10 +68,6 @@ body {
   color: #0f0f0f;
   background-size: 100% 2px;
 }
-.menu-hero li a:focus-visible {
-  outline: 3px solid #f4c430;
-  outline-offset: 2px;
-}
 
 .idiomas { list-style: none; display: flex; justify-content: center; gap: 0.5rem; padding: 0; margin-top: 0.5rem; }
 .idiomas a { color: #ffe8a3; text-decoration: none; font-weight: 600; padding: 0.3rem 0.6rem; border-radius: 20px; transition: background 0.3s, background-size 0.3s; background-image: linear-gradient(#f4c430, #f4c430); background-size: 0% 2px; background-position: 0% 100%; background-repeat: no-repeat; }
@@ -142,10 +138,6 @@ body {
   outline: 3px solid #f4c430;
   outline-offset: 2px;
 }
-.formulario-envio button:focus-visible {
-  outline: 3px solid #f4c430;
-  outline-offset: 2px;
-}
 
 /* --- Mensajes de estado --- */
 .mensaje-estado {
@@ -156,8 +148,6 @@ body {
   font-weight: 600;
   text-align: center;
 }
-.mensaje-exito { background: rgba(76, 175, 80, 0.2); color: #c7f5c4; }
-.mensaje-error { background: rgba(244, 67, 54, 0.2); color: #ffd1d1; }
 .mensaje-exito { background: rgba(76, 175, 80, 0.2); color: #c7f5c4; }
 .mensaje-error { background: rgba(244, 67, 54, 0.2); color: #ffd1d1; }
 footer {
@@ -198,17 +188,32 @@ footer .redes a:focus-visible {
   outline: 2px solid #f4c430;
   outline-offset: 2px;
 }
-footer .redes a:focus-visible {
-  outline: 2px solid #f4c430;
-  outline-offset: 2px;
-}
 
 footer .redes i {
   font-size: 1.1rem;
 }
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { animation: none !important; transition: none !important; }
+/* --- Botón volver arriba --- */
+#backToTop {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f4c430, #5e3a8c);
+  color: #0f0f0f;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(244, 196, 48, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+  z-index: 999;
 }
+
+#backToTop.show { opacity: 1; visibility: visible; transform: translateY(0); }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }

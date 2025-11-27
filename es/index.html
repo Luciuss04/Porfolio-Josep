@@ -6,7 +6,7 @@
   <meta name="description" content="Portfolio de Josep Pérez Morente: desarrollador multiplataforma, proyectos, habilidades y contacto." />
   <meta name="theme-color" content="#2e1a47" />
   <title>Josep Pérez Morente | Portfolio</title>
-  <link rel="icon" href="img/icono-github.png" type="image/png" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23f4c430'/><stop offset='1' stop-color='%235e3a8c'/></linearGradient></defs><circle cx='50' cy='50' r='50' fill='url(%23g)'/></svg>'" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet" />
@@ -23,6 +23,7 @@
   <meta property="og:locale" content="es_ES" />
   <meta property="og:image" content="../img/es.png" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="color-scheme" content="dark light" />
   <link rel="canonical" href="index.html" />
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Person","name":"Josep Pérez Morente","url":"../es/index.html","sameAs":["https://github.com/Luciuss4","https://linkedin.com/in/Luciuss4","https://mastodon.social/@Luciuss4","https://discord.com/users/443479189597716480"]}
@@ -34,8 +35,8 @@
   <!-- Hero Section -->
   <header class="hero">
     <div class="contenido-hero">
-      <h1><span>Josep Pérez Morente</span></h1>
-      <p class="subtitulo">Desarrollador Multiplataforma · Estudiante · Explorador de Tecnología y Mecánica</p>
+      <h1><span class="gradient-text">Josep Pérez Morente</span></h1>
+      <p class="subtitulo">Comprometido con el aprendizaje continuo · Full Stack con pasión por JavaScript, React y desarrollo web</p>
       <nav>
         <ul class="menu-hero">
           <li><a href="#sobre-mi">Sobre mí</a></li>
@@ -54,6 +55,10 @@
           <li><a href="../jp/index.html" lang="ja" aria-label="日本語"><img src="../img/jp.png" alt="日本語" class="flag-img" /></a></li>
         </ul>
       </nav>
+      <div class="cta">
+        <a class="cta-primary" href="contacto.html">Contactar</a>
+        <a class="cta-secondary" href="#proyectos">Ver proyectos</a>
+      </div>
     </div>
   </header>
 
@@ -78,6 +83,17 @@
         <li><strong>Integración de APIs:</strong> Consumo de servicios RESTful y manejo de datos.</li>
         <li><strong>Trabajo en equipo:</strong> Comunicación clara, colaboración ágil y enfoque en resultados.</li>
       </ul>
+      <ul class="skills-grid">
+        <li class="chip">JavaScript</li>
+        <li class="chip">React</li>
+        <li class="chip">Node.js</li>
+        <li class="chip">Next.js</li>
+        <li class="chip">CSS</li>
+        <li class="chip">MongoDB</li>
+        <li class="chip">Git</li>
+        <li class="chip">Sass</li>
+        <li class="chip">Express.js</li>
+      </ul>
     </section>
 
     <section id="intereses" class="reveal">
@@ -92,11 +108,32 @@
 
     <section id="proyectos" class="reveal">
       <h2>Proyectos destacados</h2>
-      <ul>
-        <li><strong>Gestor de tareas:</strong> Aplicación creada con Flutter y Firebase para organizar tareas personales.</li>
-        <li><strong>Juego 2D:</strong> Proyecto desarrollado en Unity con C# enfocado en mecánicas de plataformas.</li>
-        <li><strong>Web progresiva:</strong> Sitio interactivo construido con React y Node.js, optimizado para móviles.</li>
-      </ul>
+      <div class="projects-grid">
+        <article class="card">
+          <h3>Gestor de tareas</h3>
+          <p>App con Flutter + Firebase para organizar tareas personales con sincronización.</p>
+          <div class="actions">
+            <a href="https://github.com/Luciuss4" target="_blank" rel="noopener noreferrer">Ver repositorio</a>
+            <a href="#" aria-disabled="true">Demo</a>
+          </div>
+        </article>
+        <article class="card">
+          <h3>Juego 2D</h3>
+          <p>Plataformas en Unity (C#) con físicas pulidas y niveles diseñados a mano.</p>
+          <div class="actions">
+            <a href="https://github.com/Luciuss4" target="_blank" rel="noopener noreferrer">Ver repositorio</a>
+            <a href="#" aria-disabled="true">Demo</a>
+          </div>
+        </article>
+        <article class="card">
+          <h3>Web progresiva</h3>
+          <p>Sitio interactivo con React + Node.js, responsive y optimizado para móviles.</p>
+          <div class="actions">
+            <a href="https://github.com/Luciuss4" target="_blank" rel="noopener noreferrer">Ver repositorio</a>
+            <a href="#" aria-disabled="true">Demo</a>
+          </div>
+        </article>
+      </div>
     </section>
   </main>
 
@@ -104,7 +141,7 @@
   <footer class="fade-in">
     <p>© 2025 Josep Pérez Morente</p>
     <p class="redes">
-      <a href="https://github.com/Luciuss04" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a> ·
+      <a href="https://github.com/Luciuss4" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a> ·
       <a href="https://linkedin.com/in/Luciuss4" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i> LinkedIn</a> ·
       <a href="https://discord.com/users/443479189597716480" target="_blank" rel="noopener noreferrer"><i class="fab fa-discord"></i> Discord</a>
       <a href="https://mastodon.social/@Luciuss4" target="_blank" rel="me noopener noreferrer"> <i class="fab fa-mastodon"></i> Mastodon</a>

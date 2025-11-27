@@ -6,7 +6,7 @@
   <meta name="description" content="Josep Pérez Morenteのポートフォリオ：マルチプラットフォーム開発、プロジェクト、スキル、問い合わせ。" />
   <meta name="theme-color" content="#2e1a47" />
   <title>Josep Pérez Morente | ポートフォリオ</title>
-  <link rel="icon" href="../img/icono-github.png" type="image/png" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23f4c430'/><stop offset='1' stop-color='%235e3a8c'/></linearGradient></defs><circle cx='50' cy='50' r='50' fill='url(%23g)'/></svg>'" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet" />
@@ -23,6 +23,7 @@
   <meta property="og:locale" content="ja_JP" />
   <meta property="og:image" content="../img/jp.png" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="color-scheme" content="dark light" />
   <link rel="canonical" href="index.html" />
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Person","name":"Josep Pérez Morente","url":"../jp/index.html","sameAs":["https://github.com/Luciuss4","https://linkedin.com/in/Luciuss4","https://mastodon.social/@Luciuss4","https://discord.com/users/443479189597716480"]}
@@ -34,8 +35,8 @@
   <!-- ヒーローセクション -->
   <header class="hero">
     <div class="contenido-hero">
-      <h1><span>Josep Pérez Morente</span></h1>
-      <p class="subtitulo">マルチプラットフォーム開発者 · 学生 · テクノロジーとメカニクスの探求者</p>
+      <h1><span class="gradient-text">Josep Pérez Morente</span></h1>
+      <p class="subtitulo">生涯学習にコミット · JavaScriptとReact、Web開発への情熱を持つフルスタック</p>
       <nav>
         <ul class="menu-hero">
           <li><a href="#about-me">自己紹介</a></li>
@@ -54,6 +55,10 @@
           <li><a href="../jp/index.html" lang="ja" aria-label="日本語"><img src="../img/jp.png" alt="日本語" class="flag-img" /></a></li>
         </ul>
       </nav>
+      <div class="cta">
+        <a class="cta-primary" href="contact.html">お問い合わせ</a>
+        <a class="cta-secondary" href="#projects">プロジェクトを見る</a>
+      </div>
     </div>
   </header>
 
@@ -78,6 +83,17 @@
         <li><strong>API統合：</strong> RESTfulサービスの利用とデータ処理</li>
         <li><strong>チームワーク：</strong> 明確なコミュニケーション、アジャイルな協力、成果重視</li>
       </ul>
+      <ul class="skills-grid">
+        <li class="chip">JavaScript</li>
+        <li class="chip">React</li>
+        <li class="chip">Node.js</li>
+        <li class="chip">Next.js</li>
+        <li class="chip">CSS</li>
+        <li class="chip">MongoDB</li>
+        <li class="chip">Git</li>
+        <li class="chip">Sass</li>
+        <li class="chip">Express.js</li>
+      </ul>
     </section>
 
     <section id="interests" class="reveal">
@@ -92,11 +108,32 @@
 
     <section id="projects" class="reveal">
       <h2>注目プロジェクト</h2>
-      <ul>
-        <li><strong>タスク管理アプリ：</strong> FlutterとFirebaseで作成された個人タスク管理アプリ</li>
-        <li><strong>2Dゲーム：</strong> UnityとC#で開発されたプラットフォームゲーム</li>
-        <li><strong>プログレッシブWebアプリ：</strong> ReactとNode.jsで構築されたモバイル最適化サイト</li>
-      </ul>
+      <div class="projects-grid">
+        <article class="card">
+          <h3>タスク管理アプリ</h3>
+          <p>Flutter + Firebaseで個人タスクを同期管理するアプリ。</p>
+          <div class="actions">
+            <a href="https://github.com/Luciuss4" target="_blank" rel="noopener noreferrer">リポジトリ</a>
+            <a href="#" aria-disabled="true">デモ</a>
+          </div>
+        </article>
+        <article class="card">
+          <h3>2Dプラットフォーマー</h3>
+          <p>Unity（C#）で物理を磨き上げた手作りレベルのゲーム。</p>
+          <div class="actions">
+            <a href="https://github.com/Luciuss4" target="_blank" rel="noopener noreferrer">リポジトリ</a>
+            <a href="#" aria-disabled="true">デモ</a>
+          </div>
+        </article>
+        <article class="card">
+          <h3>プログレッシブWebアプリ</h3>
+          <p>React + Node.jsで構築したレスポンシブなインタラクティブサイト。</p>
+          <div class="actions">
+            <a href="https://github.com/Luciuss4" target="_blank" rel="noopener noreferrer">リポジトリ</a>
+            <a href="#" aria-disabled="true">デモ</a>
+          </div>
+        </article>
+      </div>
     </section>
   </main>
 
@@ -104,7 +141,7 @@
   <footer class="fade-in">
     <p>© 2025 Josep Pérez Morente</p>
     <p class="redes">
-      <a href="https://github.com/Luciuss04" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a> ·
+      <a href="https://github.com/Luciuss4" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a> ·
       <a href="https://linkedin.com/in/Luciuss4" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i> LinkedIn</a> ·
       <a href="https://discord.com/users/443479189597716480" target="_blank" rel="noopener noreferrer"><i class="fab fa-discord"></i> Discord</a>
       <a href="https://mastodon.social/@Luciuss4" target="_blank" rel="me noopener noreferrer"> <i class="fab fa-mastodon"></i> Mastodon</a>
