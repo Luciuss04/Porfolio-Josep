@@ -4,7 +4,7 @@
   var btn = document.getElementById('toggle-tema');
   if (btn){
     var lang = (document.documentElement.getAttribute('lang')||'').toLowerCase();
-    var labels = { es: 'Cambiar tema', en: 'Toggle theme', va: 'Canviar tema', ja: 'テーマ切替' };
+    var labels = { es: 'Cambiar tema', en: 'Switch theme', va: 'Canviar tema', ja: 'テーマ切替' };
     var base = labels[lang] || labels.en;
     function update(){
       var claro = document.documentElement.getAttribute('data-theme') === 'light';
