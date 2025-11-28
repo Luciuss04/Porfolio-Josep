@@ -29,7 +29,24 @@
       <a href="jp/index.html" class="btn" aria-label="日本語"><img src="img/jp.png" alt="日本語" class="flag-img" /></a>
     </div>
   </div>
-  
+  <script>
+    (function(){
+      var qs = (location.search || '').toLowerCase();
+      var hash = (location.hash || '').toLowerCase();
+      if (qs.indexOf('no-redirect=1') !== -1 || hash.indexOf('no-redirect') !== -1) return;
+      var lang = (navigator.languages && navigator.languages[0]) || navigator.language || '';
+      lang = (lang || '').toLowerCase();
+      var dest = 'en';
+      if (lang.indexOf('es') === 0) dest = 'es';
+      else if (lang.indexOf('en') === 0) dest = 'en';
+      else if (lang.indexOf('ja') === 0) dest = 'jp';
+      else if (lang.indexOf('ca') === 0 || lang.indexOf('val') !== -1) dest = 'va';
+      var target = dest + '/index.html';
+      if (location.pathname.indexOf('/' + target) === -1) {
+        setTimeout(function(){ location.href = target; }, 350);
+      }
+    })();
+  </script>
 
   <button id="toggle-tema" class="tema-toggle" aria-pressed="false">Cambiar tema</button>
   <script>
