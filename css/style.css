@@ -530,18 +530,13 @@ nav .idiomas a[aria-current="page"], nav .idiomas a.active { color: var(--blanco
   background:
     radial-gradient(1px 1px at 20px 30px, rgba(255,255,255,0.55), transparent 2px),
     radial-gradient(1px 1px at 100px 140px, rgba(255,255,255,0.45), transparent 2px),
-    radial-gradient(1px 1px at 160px 60px, rgba(255,255,255,0.50), transparent 2px),
-    repeating-linear-gradient(45deg, rgba(255,255,255,0.035) 0 14px, rgba(255,255,255,0.0) 14px 28px);
-  background-size: 200px 200px, 220px 220px, 180px 180px, auto;
+    radial-gradient(1px 1px at 160px 60px, rgba(255,255,255,0.50), transparent 2px);
+  background-size: 200px 200px, 220px 220px, 180px 180px;
   opacity: 0.45;
   mix-blend-mode: overlay;
   pointer-events: none;
   z-index: 0;
-  animation: stripes 18s linear infinite, twinkle 3.2s ease-in-out infinite alternate;
-}
-@keyframes stripes {
-  0% { background-position: 0 0; }
-  100% { background-position: 240px 0; }
+  animation: twinkle 3.2s ease-in-out infinite alternate;
 }
 @keyframes twinkle {
   0% { opacity: 0.35; }

@@ -102,10 +102,7 @@ body::before {
   100% { --blobA_x: 15%; --blobA_y: 24%; --blobB_x: 88%; --blobB_y: 18%; --blobC_x: 40%; --blobC_y: 84%; }
 }
 
-@keyframes stripesLang {
-  0% { background-position: 0 0; }
-  100% { background-position: 240px 0; }
-}
+/* stripesLang removed */
 @keyframes fadeIn { from { opacity: 0; transform: translateY(-15px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes pulseShadow { 0% { box-shadow: 0 4px 12px rgba(244, 196, 48, 0.2); } 50% { box-shadow: 0 8px 24px rgba(244, 196, 48, 0.6); } 100% { box-shadow: 0 4px 12px rgba(244, 196, 48, 0.2); } }
 
