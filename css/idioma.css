@@ -36,12 +36,12 @@ body::before {
   position: fixed;
   inset: -20%;
   background:
-    radial-gradient(300px 300px at var(--blobA_x, 18%) var(--blobA_y, 30%), rgba(244,196,48,0.18), transparent 60%),
-    radial-gradient(360px 360px at var(--blobB_x, 82%) var(--blobB_y, 22%), rgba(94,58,140,0.22), transparent 60%),
-    radial-gradient(260px 260px at var(--blobC_x, 45%) var(--blobC_y, 78%), rgba(255,255,255,0.06), transparent 60%);
-  filter: blur(46px);
-  opacity: 0.55;
-  animation: langBlobs 24s ease-in-out infinite alternate;
+    radial-gradient(420px 420px at var(--blobA_x, 18%) var(--blobA_y, 30%), rgba(244,196,48,0.22), transparent 60%),
+    radial-gradient(520px 520px at var(--blobB_x, 82%) var(--blobB_y, 22%), rgba(94,58,140,0.28), transparent 60%),
+    radial-gradient(360px 360px at var(--blobC_x, 45%) var(--blobC_y, 78%), rgba(255,255,255,0.08), transparent 60%);
+  filter: blur(60px);
+  opacity: 0.62;
+  animation: langBlobs 22s ease-in-out infinite alternate;
   pointer-events: none;
   z-index: 0;
 }
@@ -100,6 +100,11 @@ body::before {
   0% { --blobA_x: 18%; --blobA_y: 30%; --blobB_x: 82%; --blobB_y: 22%; --blobC_x: 45%; --blobC_y: 78%; }
   50% { --blobA_x: 26%; --blobA_y: 40%; --blobB_x: 70%; --blobB_y: 30%; --blobC_x: 52%; --blobC_y: 70%; }
   100% { --blobA_x: 15%; --blobA_y: 24%; --blobB_x: 88%; --blobB_y: 18%; --blobC_x: 40%; --blobC_y: 84%; }
+}
+
+@keyframes stripesLang {
+  0% { background-position: 0 0; }
+  100% { background-position: 240px 0; }
 }
 @keyframes fadeIn { from { opacity: 0; transform: translateY(-15px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes pulseShadow { 0% { box-shadow: 0 4px 12px rgba(244, 196, 48, 0.2); } 50% { box-shadow: 0 8px 24px rgba(244, 196, 48, 0.6); } 100% { box-shadow: 0 4px 12px rgba(244, 196, 48, 0.2); } }
@@ -177,4 +182,15 @@ body::before {
   }
 
   .idiomas a { gap: 0.4rem; }
+}
+body::after {
+  content: "";
+  position: fixed;
+  inset: -12%;
+  background: repeating-linear-gradient(45deg, rgba(255,255,255,0.04) 0 14px, rgba(255,255,255,0.00) 14px 28px);
+  opacity: 0.30;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  z-index: 0;
+  animation: stripesLang 18s linear infinite;
 }

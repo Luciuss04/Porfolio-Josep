@@ -63,11 +63,13 @@ body::after {
   content: "";
   position: fixed;
   inset: -20%;
-  background: radial-gradient(closest-side, rgba(244,196,48,0.18), transparent 60%), radial-gradient(closest-side, rgba(167,139,250,0.14), transparent 60%);
-  background-position: 20% 30%, 80% 70%;
-  filter: blur(100px);
-  opacity: 0.22;
-  animation: blobDrift 28s ease-in-out infinite alternate;
+  background:
+    radial-gradient(420px 420px at 18% 30%, rgba(244,196,48,0.20), transparent 60%),
+    radial-gradient(520px 520px at 82% 22%, rgba(167,139,250,0.22), transparent 60%),
+    radial-gradient(380px 380px at 45% 78%, rgba(94,58,140,0.22), transparent 60%);
+  filter: blur(60px);
+  opacity: 0.40;
+  animation: blobDrift 26s ease-in-out infinite alternate;
   pointer-events: none;
   z-index: -1;
 }
@@ -222,7 +224,7 @@ body::after {
 
 @keyframes blobDrift {
   0% { transform: translate(0,0) scale(1.02) }
-  100% { transform: translate(12px,-12px) scale(1.06) }
+  100% { transform: translate(20px,-16px) scale(1.07) }
 }
 
 @keyframes titlePop {
@@ -519,3 +521,18 @@ body, .hero, section, footer { transition: background-color 0.35s ease, color 0.
 nav .idiomas a[aria-current="page"], nav .idiomas a.active { color: var(--blanco); background-image: linear-gradient(var(--dorado), var(--dorado)); background-size: 100% 2px; background-position: 0% 100%; background-repeat: no-repeat; }
 .lang-notice { position: fixed; top: 10px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, var(--dorado), var(--morado-oscuro)); color: var(--negro); padding: 0.45rem 0.8rem; border-radius: 999px; font-weight: 700; box-shadow: 0 4px 10px rgba(244, 196, 48, 0.3); opacity: 0; visibility: hidden; transition: opacity 0.25s ease, visibility 0.25s ease, transform 0.25s ease; z-index: 998; }
 .lang-notice.show { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(2px); }
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: -10%;
+  background: repeating-linear-gradient(45deg, rgba(255,255,255,0.035) 0 14px, rgba(255,255,255,0.0) 14px 28px);
+  opacity: 0.35;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  z-index: 0;
+  animation: stripes 18s linear infinite;
+}
+@keyframes stripes {
+  0% { background-position: 0 0; }
+  100% { background-position: 240px 0; }
+}
