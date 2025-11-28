@@ -93,6 +93,8 @@ body::after {
   text-align: center;
   background-size: 300% 300%;
   animation: bgShift 12s ease-in-out infinite alternate;
+  position: relative;
+  overflow: hidden;
 }
 
 .contenido-hero {
@@ -101,6 +103,33 @@ body::after {
   transform: translate(var(--tiltX), var(--tiltY));
   transition: transform 0.12s ease-out;
   will-change: transform;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: -15%;
+  background:
+    radial-gradient(260px 260px at var(--blob1x, 12%) var(--blob1y, 30%), rgba(244,196,48,0.18), transparent 60%),
+    radial-gradient(340px 340px at var(--blob2x, 78%) var(--blob2y, 24%), rgba(94,58,140,0.22), transparent 60%),
+    radial-gradient(300px 300px at var(--blob3x, 40%) var(--blob3y, 76%), rgba(255,255,255,0.06), transparent 60%);
+  filter: blur(34px);
+  opacity: 0.55;
+  animation: blobs 22s ease-in-out infinite alternate;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.contenido-hero { position: relative; z-index: 1; }
+
+@keyframes blobs {
+  0%   { --blob1x: 12%; --blob1y: 30%; --blob2x: 78%; --blob2y: 24%; --blob3x: 40%; --blob3y: 76%; }
+  50%  { --blob1x: 20%; --blob1y: 38%; --blob2x: 70%; --blob2y: 32%; --blob3x: 50%; --blob3y: 70%; }
+  100% { --blob1x: 10%; --blob1y: 24%; --blob2x: 85%; --blob2y: 18%; --blob3x: 35%; --blob3y: 85%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero::before { animation: none; }
 }
 
 .contenido-hero h1 {
