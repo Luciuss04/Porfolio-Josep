@@ -1,0 +1,221 @@
+/* --- Estilos del formulario de contacto --- */
+body {
+  font-family: "Poppins", "Segoe UI", Tahoma, sans-serif;
+  background: linear-gradient(135deg, #2e1a47, #0f0f0f);
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  background-size: 300% 300%;
+  animation: bgShift 20s ease-in-out infinite alternate;
+}
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #f4c430;
+  color: #0f0f0f;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  z-index: 1000;
+  transition: top 0.2s;
+}
+
+.skip-link:focus { top: 10px; }
+
+.hero {
+  background: linear-gradient(to right, #5e3a8c, #2e1a47);
+  color: #f4c430;
+  padding: 3rem 2rem;
+  text-align: center;
+  background-size: 300% 300%;
+  animation: bgShift 16s ease-in-out infinite alternate;
+}
+
+.contenido-hero h1 span {
+  color: #f4c430;
+}
+
+.subtitulo {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+.menu-hero {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  padding: 0;
+}
+
+.menu-hero li a {
+  color: #ffe8a3;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  transition: background 0.3s, background-size 0.3s;
+  background-image: linear-gradient(#f4c430, #f4c430);
+  background-size: 0% 2px;
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+}
+
+.menu-hero li a:hover {
+  background: #f4c430;
+  color: #0f0f0f;
+  background-size: 100% 2px;
+}
+
+.idiomas { list-style: none; display: flex; justify-content: center; gap: 0.5rem; padding: 0; margin-top: 0.5rem; }
+.idiomas a { color: #ffe8a3; text-decoration: none; font-weight: 600; padding: 0.3rem 0.6rem; border-radius: 20px; transition: background 0.3s, background-size 0.3s; background-image: linear-gradient(#f4c430, #f4c430); background-size: 0% 2px; background-position: 0% 100%; background-repeat: no-repeat; }
+.idiomas a:hover { background: #f4c430; color: #0f0f0f; background-size: 100% 2px; }
+.idiomas a:focus-visible { outline: 3px solid #f4c430; outline-offset: 2px; }
+.menu-hero li a:focus-visible {
+  outline: 3px solid #f4c430;
+  outline-offset: 2px;
+}
+
+/* --- Caja del formulario --- */
+.formulario-envio {
+  max-width: 600px;
+  margin: 2rem auto;
+  background: rgba(30, 20, 50, 0.9);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+  animation: formAppear 0.6s ease both;
+}
+
+.formulario-envio label {
+  font-weight: 600;
+  color: #f4c430;
+  display: block;
+  margin-top: 1rem;
+}
+
+.formulario-envio input,
+.formulario-envio textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin-top: 0.3rem;
+  border: 1px solid #5e3a8c;
+  border-radius: 8px;
+  background: #1c1c1c;
+  color: #fff;
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.formulario-envio input:focus,
+.formulario-envio textarea:focus {
+  border-color: #f4c430;
+  box-shadow: 0 0 8px rgba(244,196,48,0.5);
+  outline: none;
+}
+
+.formulario-envio button {
+  margin-top: 1.5rem;
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #f4c430, #5e3a8c);
+  color: #0f0f0f;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.3s;
+}
+
+.formulario-envio button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(244,196,48,0.5);
+}
+.formulario-envio button:focus-visible {
+  outline: 3px solid #f4c430;
+  outline-offset: 2px;
+}
+
+/* --- Mensajes de estado --- */
+.mensaje-estado {
+  margin-top: 1rem;
+  padding: 0.8rem;
+  border-radius: 6px;
+  display: none;
+  font-weight: 600;
+  text-align: center;
+}
+.mensaje-exito { background: rgba(76, 175, 80, 0.2); color: #c7f5c4; }
+.mensaje-error { background: rgba(244, 67, 54, 0.2); color: #ffd1d1; }
+footer {
+  background-color: #0f0f0f;
+  color: #f4c430;
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.95rem;
+  border-top: 2px solid #5e3a8c;
+  margin-top: 3rem;
+  transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease;
+}
+
+footer .redes {
+  margin-top: 0.5rem;
+}
+
+footer .redes a {
+  color: #ffe8a3;
+  text-decoration: none;
+  font-weight: 600;
+  margin: 0 0.4rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: color 0.3s ease, background-size 0.3s;
+  background-image: linear-gradient(#f4c430, #f4c430);
+  background-size: 0% 2px;
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+}
+
+footer .redes a:hover {
+  color: #f4c430;
+  background-size: 100% 2px;
+}
+footer .redes a:focus-visible {
+  outline: 2px solid #f4c430;
+  outline-offset: 2px;
+}
+
+footer .redes i {
+  font-size: 1.1rem;
+}
+/* --- Botón volver arriba --- */
+#backToTop {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f4c430, #5e3a8c);
+  color: #0f0f0f;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(244, 196, 48, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+  z-index: 999;
+}
+
+#backToTop.show { opacity: 1; visibility: visible; transform: translateY(0); }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+@keyframes bgShift { 0% { background-position: 0% 50%; } 100% { background-position: 100% 50%; } }
+@keyframes formAppear { 0% { opacity: 0; transform: translateY(12px); } 100% { opacity: 1; transform: translateY(0); } }

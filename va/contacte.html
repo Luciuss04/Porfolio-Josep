@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="va">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Contacte amb Josep Pérez Morente. Envia un missatge de forma segura." />
+  <meta name="theme-color" content="#2e1a47" />
+  <title>Contacte | Josep Pérez Morente</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/contacto.css" />
+  
+  <link rel="canonical" href="contacte.html" />
+  <link rel="alternate" hreflang="es" href="../es/contacto.html" />
+  <link rel="alternate" hreflang="en" href="../en/contact.html" />
+  <link rel="alternate" hreflang="va" href="contacte.html" />
+  <link rel="alternate" hreflang="ja" href="../jp/contact.html" />
+  <link rel="alternate" hreflang="x-default" href="../index.html" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23f4c430'/><stop offset='1' stop-color='%235e3a8c'/></linearGradient></defs><circle cx='50' cy='50' r='50' fill='url(%23g)'/></svg>'" />
+  <meta name="color-scheme" content="dark light" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; connect-src 'self' https://discord.com https://discordapp.com; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests" />
+</head>
+<body>
+  <script src="../js/framebreaker.js" defer></script>
+  <script src="../js/contact.js" defer></script>
+  <a href="#main" class="skip-link">Anar directament al contingut</a>
+
+  <header class="hero">
+    <div class="contenido-hero">
+      <h1><span>📬 Envia un missatge</span></h1>
+      <p class="subtitulo">El teu missatge pot ascendir a l’Olimp. Comparteix-lo amb Atenea!</p>
+      <nav>
+        <ul class="menu-hero">
+          <li><a href="index.html#sobre-mi">Sobre mi</a></li>
+          <li><a href="index.html#habilitats">Habilitats</a></li>
+          <li><a href="index.html#interessos">Interessos</a></li>
+          <li><a href="index.html#projectes">Projectes</a></li>
+          <li><a href="index.html">Inici</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Idioma">
+        <ul class="idiomas">
+          <li><a href="../es/contacto.html" lang="es" aria-label="Español"><img src="../img/es.png" alt="Español" class="flag-img" /></a></li>
+          <li><a href="../en/contact.html" lang="en" aria-label="English"><img src="../img/en.png" alt="English" class="flag-img" /></a></li>
+          <li><a href="contacte.html" lang="va" aria-label="Valencià"><img src="../img/va.png" alt="Valencià" class="flag-img" /></a></li>
+          <li><a href="../jp/contact.html" lang="ja" aria-label="日本語"><img src="../img/jp.png" alt="日本語" class="flag-img" /></a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="formulario-envio" aria-label="Formulari de contacte">
+      <form id="formulario">
+        <input type="hidden" name="idioma" value="Valencià" />
+
+        <label for="nombre">👤 Nom:</label>
+        <input type="text" id="nombre" name="nombre" required autocomplete="name" minlength="2" placeholder="El teu nom" />
+
+        <label for="email">📧 Correu electrònic:</label>
+        <input type="email" id="email" name="email" required autocomplete="email" inputmode="email" placeholder="tu@correu.com" />
+
+        <label for="mensaje">📝 Missatge:</label>
+        <textarea id="mensaje" name="mensaje" rows="6" required minlength="10" placeholder="Com puc ajudar-te?"></textarea>
+
+        <button type="submit">⚡ Enviar a l’Olimp</button>
+      </form>
+      <div id="estado" class="mensaje-estado" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <footer class="fade-in">
+    <p>© 2025 Josep Pérez Morente</p>
+    <p class="redes">
+      <a href="https://github.com/Luciuss04" target="_blank" rel="noopener noreferrer">GitHub</a> ·
+      <a href="https://linkedin.com/in/Luciuss4" target="_blank" rel="noopener noreferrer">LinkedIn</a> ·
+      <a href="https://discord.com/users/443479189597716480" target="_blank" rel="noopener noreferrer">Discord</a>
+    </p>
+  </footer>
+
+</body>
+</html>

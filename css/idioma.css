@@ -1,0 +1,193 @@
+:root {
+  --morado-oscuro: #2e1a47;
+  --morado-medio: #5e3a8c;
+  --dorado: #f4c430;
+  --negro: #0f0f0f;
+  --blanco: #ffffff;
+}
+
+:root[data-theme="light"] {
+  --morado-oscuro: #ede7f6;
+  --morado-medio: #d1c4e9;
+  --dorado: #f4c430;
+  --negro: #ffffff;
+  --blanco: #0f0f0f;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, var(--morado-oscuro), var(--negro));
+  color: var(--blanco);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background-size: 300% 300%;
+  animation: bgShift 14s ease-in-out infinite alternate;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: -20%;
+  background:
+    radial-gradient(420px 420px at var(--blobA_x, 18%) var(--blobA_y, 30%), rgba(244,196,48,0.22), transparent 60%),
+    radial-gradient(520px 520px at var(--blobB_x, 82%) var(--blobB_y, 22%), rgba(94,58,140,0.28), transparent 60%),
+    radial-gradient(360px 360px at var(--blobC_x, 45%) var(--blobC_y, 78%), rgba(255,255,255,0.08), transparent 60%);
+  filter: blur(60px);
+  opacity: 0.62;
+  animation: langBlobs 22s ease-in-out infinite alternate;
+  pointer-events: none;
+  z-index: 0;
+}
+
+
+.selector-idioma {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 3rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  animation: fadeIn 0.8s ease both;
+  position: relative;
+  z-index: 1;
+}
+
+.selector-idioma h1 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  color: #f4c430;
+}
+
+.botones {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  background: linear-gradient(135deg, var(--dorado), var(--morado-medio));
+  color: var(--negro);
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: transform 0.2s, box-shadow 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(244, 196, 48, 0.5);
+  animation: pulseShadow 0.6s ease;
+}
+
+.btn:focus-visible {
+  outline: 3px solid var(--dorado);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+@keyframes bgShift { 0% { background-position: 0% 50%; } 100% { background-position: 100% 50%; } }
+@keyframes langBlobs {
+  0% { --blobA_x: 18%; --blobA_y: 30%; --blobB_x: 82%; --blobB_y: 22%; --blobC_x: 45%; --blobC_y: 78%; }
+  50% { --blobA_x: 26%; --blobA_y: 40%; --blobB_x: 70%; --blobB_y: 30%; --blobC_x: 52%; --blobC_y: 70%; }
+  100% { --blobA_x: 15%; --blobA_y: 24%; --blobB_x: 88%; --blobB_y: 18%; --blobC_x: 40%; --blobC_y: 84%; }
+}
+
+/* stripesLang removed */
+@keyframes fadeIn { from { opacity: 0; transform: translateY(-15px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes pulseShadow { 0% { box-shadow: 0 4px 12px rgba(244, 196, 48, 0.2); } 50% { box-shadow: 0 8px 24px rgba(244, 196, 48, 0.6); } 100% { box-shadow: 0 4px 12px rgba(244, 196, 48, 0.2); } }
+
+.tema-toggle {
+  position: fixed;
+  top: 50%;
+  right: 16px;
+  transform: translate(0, -50%);
+  background: linear-gradient(135deg, var(--dorado), var(--morado-oscuro));
+  color: var(--negro);
+  border: none;
+  padding: 0.5rem 0.9rem;
+  font-size: 0.9rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.3s;
+  z-index: 1000;
+  animation: bumpIn 0.6s ease-out;
+}
+
+.tema-toggle:hover { transform: translateY(-2px); box-shadow: 0 4px 10px rgba(244, 196, 48, 0.4); }
+.tema-toggle:focus-visible { outline: 3px solid var(--dorado); outline-offset: 2px; }
+
+@keyframes bumpIn { 0% { transform: translate(40px, -50%); opacity: 0; } 100% { transform: translate(0, -50%); opacity: 1; } }
+
+/* Flags: show emoji on desktop, use Valencia image on mobile */
+.btn .flag-img {
+  display: inline-block; /* Mostrar por defecto en todas resoluciones */
+  width: 22px;
+  height: auto;
+  vertical-align: middle;
+  margin-right: 0.6rem;
+}
+.btn .flag-emoji {
+  display: none; /* Ocultar emoji ahora que usamos imagen en todas las resoluciones */
+  font-size: 1.2rem;
+  vertical-align: middle;
+  margin-right: 0.6rem;
+}
+
+/* Language menu icons (nav .idiomas) */
+.idiomas a .flag-img {
+  display: inline-block;
+  width: 18px;
+  height: auto;
+  vertical-align: middle;
+  margin-right: 0.4rem;
+}
+.idiomas a .flag-emoji {
+  font-size: 1rem;
+  vertical-align: middle;
+  margin-right: 0.4rem;
+}
+
+/* Mobile: swap icon -> show Valencia flag image, hide emoji */
+@media (max-width: 640px) {
+  .btn .flag-img { display: inline-block; }
+  .btn .flag-emoji { display: none; }
+  .botones { gap: 0.8rem; }
+  .btn { padding: 0.8rem 1rem; font-size: 1rem; }
+  .idiomas a .flag-img { display: inline-block; }
+  .idiomas a .flag-emoji { display: none; }
+  /* Accessibility: visually hide text but keep for screen readers */
+  .sr-only {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0 0 0 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+  }
+
+  .idiomas a { gap: 0.4rem; }
+}
+body::after {
+  content: "";
+  position: fixed;
+  inset: -12%;
+  background: repeating-linear-gradient(45deg, rgba(255,255,255,0.04) 0 14px, rgba(255,255,255,0.00) 14px 28px);
+  opacity: 0.30;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  z-index: 0;
+  animation: stripesLang 18s linear infinite;
+}
