@@ -1,0 +1,17 @@
+{
+  "name": "Josep Pérez Morente — Portafolio",
+  "short_name": "Josep",
+  "start_url": "/Porfolio--Josep/",
+  "display": "standalone",
+  "background_color": "#1b153d",
+  "theme_color": "#1b153d",
+  "description": "Desarrollador multiplataforma. Construyo experiencias web memorables.",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
