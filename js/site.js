@@ -61,5 +61,28 @@
     var al = a.getAttribute('lang')||'';
     if (al && langEl && al.toLowerCase()===langEl.toLowerCase()){ a.classList.add('active'); a.setAttribute('aria-current','page'); }
     a.addEventListener('click', function(){ var l = a.getAttribute('lang')||''; if(l){ try{ localStorage.setItem('prefLang', l.toLowerCase()); }catch(e){} } });
+    a.addEventListener('click', function(){
+      var lang = (document.documentElement.getAttribute('lang')||'').toLowerCase();
+      var texts = { es:'Idioma guardado', en:'Language saved', va:'Idioma guardat', ja:'言語を保存しました' };
+      var t = texts[lang] || texts.en;
+      var el = document.getElementById('lang-saved');
+      if (el) { el.remove(); }
+      el = document.createElement('div');
+      el.id = 'lang-saved';
+      el.textContent = t;
+      el.style.position = 'fixed';
+      el.style.bottom = '16px';
+      el.style.right = '16px';
+      el.style.zIndex = '9999';
+      el.style.padding = '10px 12px';
+      el.style.borderRadius = '8px';
+      el.style.background = 'rgba(0,0,0,0.8)';
+      el.style.color = '#fff';
+      el.style.font = '600 14px/1 Manrope,system-ui';
+      el.style.boxShadow = '0 6px 20px rgba(0,0,0,0.25)';
+      document.body.appendChild(el);
+      setTimeout(function(){ el.classList.add('hide'); }, 1400);
+      setTimeout(function(){ if(el && el.parentNode){ el.parentNode.removeChild(el); } }, 2000);
+    });
   });
 })();
