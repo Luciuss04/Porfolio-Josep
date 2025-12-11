@@ -57,5 +57,9 @@
   if (params.get('from') === 'redirect' && notice) { notice.classList.add('show'); setTimeout(function(){ notice.classList.remove('show'); }, 3200); }
   var langEl = document.documentElement.getAttribute('lang')||'';
   var links = document.querySelectorAll('nav .idiomas a');
-  links.forEach(function(a){ var al = a.getAttribute('lang')||''; if (al && langEl && al.toLowerCase()===langEl.toLowerCase()){ a.classList.add('active'); a.setAttribute('aria-current','page'); } });
+  links.forEach(function(a){
+    var al = a.getAttribute('lang')||'';
+    if (al && langEl && al.toLowerCase()===langEl.toLowerCase()){ a.classList.add('active'); a.setAttribute('aria-current','page'); }
+    a.addEventListener('click', function(){ var l = a.getAttribute('lang')||''; if(l){ try{ localStorage.setItem('prefLang', l.toLowerCase()); }catch(e){} } });
+  });
 })();
