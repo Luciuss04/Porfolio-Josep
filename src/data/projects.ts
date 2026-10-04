@@ -27,6 +27,8 @@ export type Project = {
     intro: L<string[]>
     built: L<string[]>
     screenshots: Image[]
+    /** Invitación a escribir al final de la página, ligada a lo que se acaba de ver */
+    invite: L<{ title: string; text: string }>
     notes?: L<string[]>
     // Pendientes de texto del autor; si no existen, la página no muestra el bloque
     decisions?: L<string[]>
@@ -91,6 +93,10 @@ export const PROJECTS: Project[] = [
         ],
       },
       screenshots: [],
+      invite: {
+        es: { title: '¿Necesitas una web así?', text: 'Landings y paneles de administración, por encargo o como parte de tu equipo.' },
+        en: { title: 'Need a site like this?', text: 'Landing pages and admin panels, freelance or as part of your team.' },
+      },
       notes: {
         es: [
           'El backend (la API y el bot) no forma parte del repositorio público, así que aquí solo se describe la interfaz web.',
@@ -154,6 +160,10 @@ export const PROJECTS: Project[] = [
         ],
       },
       screenshots: [],
+      invite: {
+        es: { title: '¿Un bot para tu servidor?', text: 'Música, comandos a medida o lo que necesite tu comunidad. Por encargo o programando en Python dentro de tu equipo.' },
+        en: { title: 'A bot for your server?', text: 'Music, custom commands or whatever your community needs. Freelance, or writing Python on your team.' },
+      },
     },
   },
   {
@@ -205,6 +215,10 @@ export const PROJECTS: Project[] = [
         ],
       },
       screenshots: [],
+      invite: {
+        es: { title: '¿Una web como esta?', text: 'Hecha con React y TypeScript. Para tu proyecto o dentro de tu equipo.' },
+        en: { title: 'A site like this one?', text: 'Built with React and TypeScript. For your project or on your team.' },
+      },
     },
   },
 

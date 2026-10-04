@@ -25,6 +25,7 @@ export type Dict = {
     caseStudy: string
     site: string
     code: string
+    write: string
     type: string
     year: string
     status: string
@@ -91,6 +92,7 @@ const es: Dict = {
     caseStudy: 'Ver proyecto',
     site: 'Ver web',
     code: 'Ver código',
+    write: 'Escríbeme',
     type: 'Tipo',
     year: 'Año',
     status: 'Estado',
@@ -184,6 +186,7 @@ const en: Dict = {
     caseStudy: 'View project',
     site: 'Visit site',
     code: 'View code',
+    write: 'Get in touch',
     type: 'Type',
     year: 'Year',
     status: 'Status',

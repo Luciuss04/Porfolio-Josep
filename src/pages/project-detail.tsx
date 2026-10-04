@@ -2,7 +2,9 @@ import { Link, useParams } from 'react-router'
 import { ArrowLeft, ArrowRight } from 'lucide-react'
 import { motion, useReducedMotion } from 'motion/react'
 import { Reveal, Stagger, StaggerItem } from '@/components/layout/reveal'
+import { GithubIcon } from '@/components/icons'
 import { ProjectLinks } from '@/components/sections/featured'
+import { LinkButton, RouteButton } from '@/components/ui/button'
 import { TechTags } from '@/components/projects/tech-tags'
 import { FEATURED, yearLabel } from '@/data/projects'
 import { SITE_NAME } from '@/data/site'
@@ -157,7 +159,28 @@ function Detail({ slug }: { slug: string }) {
         </Reveal>
       )}
 
-      <nav aria-labelledby="more-projects" className="mt-20 border-t border-line pt-10">
+      {/* Invitación a escribir, ligada al proyecto que se acaba de ver */}
+      <Reveal className="mt-20">
+        <section aria-labelledby="invite" className="rounded-2xl border border-line bg-surface/60 p-7 sm:p-9">
+          <h2 id="invite" className="font-display text-3xl text-marble sm:text-4xl">
+            {cs.invite[lang].title}
+          </h2>
+          <p className="mt-3 max-w-xl text-lg text-mist">{cs.invite[lang].text}</p>
+          <div className="mt-7 flex flex-wrap gap-3">
+            <RouteButton to={to(`/proyectos/${project.slug}#contact`)}>
+              {t.project.write}
+              <ArrowRight className="icon-nudge size-4" aria-hidden="true" />
+            </RouteButton>
+            <LinkButton href={project.repo} target="_blank" rel="noopener" variant="outline">
+              <GithubIcon className="icon-nudge-gh size-4" />
+              {t.project.code}
+              <span className="sr-only">: {project.name[lang]}</span>
+            </LinkButton>
+          </div>
+        </section>
+      </Reveal>
+
+      <nav aria-labelledby="more-projects" className="mt-14 border-t border-line pt-10">
         <h2 id="more-projects" className="label text-mist">
           {t.project.more}
         </h2>
