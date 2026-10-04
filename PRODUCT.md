@@ -8,18 +8,18 @@ web
 
 ## Users
 
-Dos públicos con el mismo peso, confirmados por Josep:
+Dos públicos con el mismo peso, ambos como clientes de encargos:
 
-- **Empresas que evalúan para prácticas o un primer empleo.** Reclutadores y tutores de empresa que abren el enlace desde un CV o un correo. Miran rápido: quién es, qué sabe hacer de verdad y dónde está el código.
-- **Personas que buscan a alguien que les haga una web o un bot de Discord.** Quieren ver trabajos anteriores antes de decidir si escriben.
+- **Particulares y comunidades** que quieren una web o un bot de Discord para su proyecto o su servidor.
+- **Empresas** que necesitan una web, un panel o un bot y buscan a quien se lo haga por encargo.
 
-Ninguno de los dos manda sobre el otro; el sitio no debe inclinarse hacia un tono de currículum ni hacia uno comercial.
+Josep no busca prácticas ni empleo: el sitio no se dirige a reclutadores ni adopta tono de currículum.
 
 ## Product Purpose
 
 Portfolio personal de Josep Pérez Morente, estudiante de Desarrollo de Aplicaciones Multiplataforma (DAM). Reúne en un solo sitio sus proyectos públicos de GitHub y explica cada uno con información comprobable.
 
-**Éxito = que el visitante escriba.** El contacto por email o redes es la acción principal; ver el código y entender el nivel son pasos hacia ella, no el objetivo final.
+**Éxito = que el visitante escriba para encargar un trabajo.** Josep acepta encargos freelance, en remoto.
 
 ## Positioning
 
@@ -27,14 +27,15 @@ Lo que se muestra es lo que hay en los repositorios públicos, descrito sin ador
 
 ## Operating Context
 
-- Se llega desde un enlace en un CV, un correo, el perfil de GitHub o una conversación en Discord; casi siempre es una primera visita y corta.
-- El visitante compara con otros candidatos o proveedores y decide en poco tiempo si sigue leyendo.
+- Se llega desde un enlace en una conversación de Discord, el perfil de GitHub o una recomendación; casi siempre es una primera visita y corta.
+- El visitante compara con otros proveedores y decide en poco tiempo si sigue leyendo.
 - El sitio se publica en GitHub Pages bajo `/Porfolio-Josep/` y se despliega solo con cada push a `main`.
 
 ## Capabilities and Constraints
 
 - **Rutas:** inicio, índice de proyectos con filtros (tecnología, tipo, año), página de detalle para cada proyecto destacado, y sobre mí. El contacto es una sección al final de cada página.
 - **Idiomas (regla fija):** español como idioma principal e inglés como única traducción. No se añaden más idiomas.
+- **Ubicación:** no se muestra.
 - **Proyectos:** tres destacados (PoseidonUI, AteneaUI, Porfolio-Josep) y cinco prácticas de DAM. Los datos son estáticos, en `src/data/projects.ts`; el sitio no depende de la API de GitHub al cargar.
 - **Tecnologías mostradas:** solo las doce respaldadas por los repositorios públicos (ver `src/data/site.ts`).
 - **Pendiente, sin decidir todavía:**
@@ -59,7 +60,7 @@ Lo que se muestra es lo que hay en los repositorios públicos, descrito sin ador
 ## Product Principles
 
 1. **El contacto es el destino.** Cada página deja claro cómo escribir a Josep; nada compite con esa acción.
-2. **Dos públicos, una sola voz.** El mismo contenido debe servir a quien contrata y a quien encarga, sin versiones distintas.
+2. **Dos clientes, una sola voz.** El mismo contenido debe servir a quien encarga algo para su comunidad y a quien lo encarga para su empresa.
 3. **Enseñar antes que afirmar.** Un enlace al código o a la web publicada vale más que un adjetivo.
 4. **Lo que falta, se omite.** Un hueco honesto es mejor que un relleno.
 5. **Los nombres cuentan una historia.** La mitología griega da carácter a los proyectos y los hace recordables.
