@@ -41,7 +41,7 @@ function Layout() {
       <Ambient />
       <a
         href="#main"
-        className="fixed left-4 top-4 z-[60] -translate-y-24 inline-flex min-h-11 items-center rounded-full bg-gold px-4 text-abyss focus:translate-y-0"
+        className="fixed left-4 top-4 z-[60] -translate-y-24 inline-flex min-h-11 items-center rounded-full bg-violet px-4 text-white focus:translate-y-0"
       >
         {t.skip}
       </a>

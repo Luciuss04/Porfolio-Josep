@@ -9,7 +9,6 @@ const base =
 export const variants = {
   primary:
     'sheen bg-violet text-white hover:bg-violet-deep shadow-violet/80 hover:shadow-[0_12px_28px_-12px] focus-visible:shadow-[0_12px_28px_-12px]',
-  gold: 'sheen bg-gold text-abyss hover:bg-gold-pale',
   outline:
     'border border-line bg-abyss/40 text-marble hover:border-violet-soft/70 hover:text-violet-pale focus-visible:border-violet-soft/70 focus-visible:text-violet-pale',
   quiet: 'text-mist hover:text-violet-pale px-0',
