@@ -73,7 +73,7 @@ const es: Dict = {
     main: 'Principal',
   },
   hero: {
-    lead: 'Estudio Desarrollo de Aplicaciones Multiplataforma. Construyo webs, bots de Discord y herramientas de consola.',
+    lead: 'Hago webs, bots de Discord y herramientas de consola por encargo, en remoto. Estudio Desarrollo de Aplicaciones Multiplataforma.',
     ctaWork: 'Ver proyectos',
     ctaContact: 'Escríbeme',
     facts: {
@@ -167,7 +167,7 @@ const en: Dict = {
     main: 'Main',
   },
   hero: {
-    lead: 'I study cross-platform application development. I build websites, Discord bots and console tools.',
+    lead: 'I build websites, Discord bots and command-line tools to order, remotely. I study cross-platform application development.',
     ctaWork: 'See projects',
     ctaContact: 'Get in touch',
     facts: {
