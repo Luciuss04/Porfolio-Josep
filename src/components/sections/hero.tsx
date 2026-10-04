@@ -1,63 +1,137 @@
-import { motion, useReducedMotion } from 'motion/react'
-import { ConstellationField } from '@/components/ui/constellation-field'
-import { LinkButton } from '@/components/ui/button'
+import { useRef, type PointerEvent } from 'react'
+import {
+  motion,
+  useInView,
+  useMotionValue,
+  useReducedMotion,
+  useScroll,
+  useSpring,
+  useTransform,
+  type Variants,
+} from 'motion/react'
+import { ArrowRight, ArrowUpRight } from 'lucide-react'
+import { RouteButton } from '@/components/ui/button'
+import { riseItem } from '@/components/layout/reveal'
+import { GITHUB_URL } from '@/data/site'
 import { useI18n } from '@/i18n'
+import { EASE } from '@/lib/utils'
 
-const LINES = ['Josep', 'Pérez Morente']
+const sequence: Variants = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.09, delayChildren: 0.1 } },
+}
+
+// Cada línea del nombre sube desde detrás de una máscara
+const line: Variants = {
+  hidden: { y: '110%' },
+  show: { y: 0, transition: { duration: 0.75, ease: EASE } },
+}
 
 export function Hero() {
-  const { t } = useI18n()
+  const { t, to } = useI18n()
   const reduce = useReducedMotion()
-  const touch = typeof window !== 'undefined' && window.matchMedia('(hover: none)').matches
-  let i = 0
+  const ref = useRef<HTMLElement>(null)
+  // La retícula solo se mueve mientras el hero está a la vista
+  const inView = useInView(ref)
+
+  // Profundidad: el fondo se desplaza más despacio que el contenido al hacer scroll
+  const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] })
+  const backY = useTransform(scrollYProgress, [0, 1], [0, 110])
+
+  // Un halo sigue al cursor con inercia (solo se calcula mientras el puntero se mueve)
+  const px = useMotionValue(0)
+  const py = useMotionValue(0)
+  const glowX = useSpring(px, { stiffness: 60, damping: 20 })
+  const glowY = useSpring(py, { stiffness: 60, damping: 20 })
+
+  function onPointerMove(e: PointerEvent<HTMLElement>) {
+    if (reduce || e.pointerType !== 'mouse' || !ref.current) return
+    const rect = ref.current.getBoundingClientRect()
+    px.set(e.clientX - rect.left - rect.width * 0.7)
+    py.set(e.clientY - rect.top - rect.height * 0.3)
+  }
 
   return (
-    <section id="top" className="relative flex min-h-[100svh] items-end overflow-hidden pb-16 pt-28 sm:items-center sm:pb-24">
-      <ConstellationField className="absolute inset-0" />
-      {/* viñeta para que el texto se lea siempre */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_20%_60%,rgba(5,12,34,.85),transparent_60%)]"
-      />
-      <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-abyss to-transparent" />
+    <section
+      ref={ref}
+      aria-labelledby="hero-title"
+      onPointerMove={onPointerMove}
+      className="relative overflow-hidden border-b border-line/60"
+    >
+      <motion.div aria-hidden="true" style={reduce ? undefined : { y: backY }} className="pointer-events-none absolute inset-0">
+        <div className="absolute inset-0 bg-[radial-gradient(55%_60%_at_78%_18%,color-mix(in_oklab,var(--color-violet)_26%,transparent),transparent_70%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(30%_35%_at_12%_95%,color-mix(in_oklab,var(--color-gold)_10%,transparent),transparent_70%)]" />
+        {/* Halo que acompaña al cursor */}
+        <motion.div
+          style={{ x: glowX, y: glowY }}
+          className="absolute left-[70%] top-[30%] -ml-[19rem] -mt-[19rem] size-[38rem] rounded-full bg-[radial-gradient(closest-side,color-mix(in_oklab,var(--color-violet-soft)_16%,transparent),transparent)]"
+        />
+        {/* Retícula que se desliza muy despacio, enmascarada hacia los bordes */}
+        <div className="absolute inset-0 overflow-hidden [mask-image:radial-gradient(70%_70%_at_70%_25%,#000,transparent_75%)]">
+          <div
+            style={{ animationPlayState: inView ? 'running' : 'paused' }}
+            className="absolute -inset-16 animate-grid-pan bg-[linear-gradient(to_right,color-mix(in_oklab,var(--color-violet-soft)_8%,transparent)_1px,transparent_1px),linear-gradient(to_bottom,color-mix(in_oklab,var(--color-violet-soft)_8%,transparent)_1px,transparent_1px)] bg-[size:64px_64px]" />
+        </div>
+      </motion.div>
 
-      <div className="relative mx-auto w-full max-w-6xl px-5 sm:px-8">
-        <h1 aria-label="Josep Pérez Morente" className="font-display text-[clamp(3rem,10.5vw,8.75rem)] leading-[0.95] tracking-[-0.01em]">
-          {LINES.map((line) => (
-            <span key={line} aria-hidden="true" className="block overflow-hidden pb-[0.08em]">
-              {line.split('').map((ch) => {
-                const delay = 0.15 + i++ * 0.035
-                return (
-                  <motion.span
-                    key={`${line}-${delay}`}
-                    className="text-engraved inline-block whitespace-pre"
-                    initial={reduce ? false : { y: '105%', opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.8, delay, ease: [0.2, 0.7, 0.2, 1] }}
-                  >
-                    {ch}
-                  </motion.span>
-                )
-              })}
-            </span>
-          ))}
+      <motion.div
+        className="relative mx-auto w-full max-w-6xl px-5 pb-16 pt-36 sm:px-8 sm:pb-24 sm:pt-44"
+        variants={sequence}
+        initial={reduce ? false : 'hidden'}
+        animate="show"
+      >
+        <h1 id="hero-title" className="font-display text-[clamp(2.75rem,8.5vw,6rem)] leading-[1.02]">
+          <span className="block overflow-hidden pb-[0.06em]">
+            <motion.span variants={line} className="block text-marble">
+              Josep
+            </motion.span>
+          </span>
+          <span className="block overflow-hidden pb-[0.12em]">
+            <motion.span variants={line} className="block text-gold-pale">
+              Pérez Morente
+            </motion.span>
+          </span>
         </h1>
 
-        <motion.div
-          initial={reduce ? false : { opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.85 }}
-        >
-          <p className="mt-8 max-w-[34rem] text-lg leading-relaxed text-marble/90 sm:text-xl">{t.hero.lead}</p>
-          <div className="mt-9 flex flex-wrap gap-3">
-            <LinkButton href="#work">{t.hero.ctaWork}</LinkButton>
-            <LinkButton href="#contact" variant="outline">
-              {t.hero.ctaContact}
-            </LinkButton>
-          </div>
-          <p className="mt-14 text-sm text-mist">{touch ? t.hero.hintTouch : t.hero.hint}</p>
+        <motion.p variants={riseItem} className="mt-7 max-w-[36rem] text-lg leading-relaxed text-marble/90 sm:text-xl">
+          {t.hero.lead}
+        </motion.p>
+
+        <motion.div variants={riseItem} className="mt-9 flex flex-wrap gap-3">
+          <RouteButton to={to('/proyectos')}>
+            {t.hero.ctaWork}
+            <ArrowRight className="icon-nudge size-4" aria-hidden="true" />
+          </RouteButton>
+          <RouteButton to={to('/#contact')} variant="outline">
+            {t.hero.ctaContact}
+          </RouteButton>
         </motion.div>
-      </div>
+
+        <motion.dl variants={riseItem} className="mt-16 grid gap-x-10 gap-y-6 border-t border-line/70 pt-8 sm:grid-cols-3">
+          <div>
+            <dt className="label text-mist">{t.hero.facts.build}</dt>
+            <dd className="mt-2 text-marble">{t.hero.facts.buildValue}</dd>
+          </div>
+          <div>
+            <dt className="label text-mist">{t.hero.facts.stack}</dt>
+            <dd className="mt-2 text-marble">Java · Python · TypeScript</dd>
+          </div>
+          <div>
+            <dt className="label text-mist">{t.hero.facts.code}</dt>
+            <dd className="mt-2">
+              <a
+                href={GITHUB_URL}
+                target="_blank"
+                rel="noopener me"
+                className="link-sweep inline-flex items-center gap-1 pb-0.5 text-violet-pale hover:text-gold-pale"
+              >
+                github.com/Luciuss04
+                <ArrowUpRight className="icon-nudge-out icon-nudge size-4" aria-hidden="true" />
+              </a>
+            </dd>
+          </div>
+        </motion.dl>
+      </motion.div>
     </section>
   )
 }

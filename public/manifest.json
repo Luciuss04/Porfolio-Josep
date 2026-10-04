@@ -3,7 +3,7 @@
   "short_name": "Josep",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#050c22",
-  "theme_color": "#050c22",
+  "background_color": "#09070f",
+  "theme_color": "#09070f",
   "icons": [{ "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml" }]
 }

@@ -8,7 +8,7 @@ export function Footer() {
         <p>
           © {new Date().getFullYear()} Josep Pérez Morente. {t.footer.made}
         </p>
-        <a href="#top" className="transition-colors hover:text-gold-pale">
+        <a href="#top" className="link-sweep inline-flex min-h-11 items-center hover:text-violet-pale">
           {t.footer.top}
         </a>
       </div>

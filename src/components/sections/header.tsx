@@ -1,10 +1,17 @@
 import { useEffect, useState } from 'react'
+import { Link, NavLink, useLocation } from 'react-router'
+import { AnimatePresence, motion, useReducedMotion, useScroll } from 'motion/react'
+import { Menu, X } from 'lucide-react'
 import { LANGS, LANG_LABEL, useI18n } from '@/i18n'
-import { cn } from '@/lib/utils'
+import { EASE, cn } from '@/lib/utils'
 
 export function Header() {
-  const { t, lang, setLang } = useI18n()
+  const { t, lang, setLang, to } = useI18n()
+  const { pathname } = useLocation()
+  const reduce = useReducedMotion()
+  const { scrollYProgress } = useScroll()
   const [scrolled, setScrolled] = useState(false)
+  const [open, setOpen] = useState(false)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24)
@@ -13,45 +20,161 @@ export function Header() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  useEffect(() => {
+    if (!open) return
+    const onKey = (e: KeyboardEvent) => e.key === 'Escape' && setOpen(false)
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [open])
+
+  const links = [
+    { path: '/', label: t.nav.home, end: true },
+    { path: '/proyectos', label: t.nav.projects, end: false },
+    { path: '/sobre-mi', label: t.nav.about, end: false },
+  ]
+  const contactHref = { pathname, search: lang === 'es' ? '' : `?lang=${lang}`, hash: '#contact' }
+  const glide = { duration: 0.32, ease: EASE }
+
   return (
     <header
       className={cn(
         'fixed inset-x-0 top-0 z-50 transition-colors duration-300',
-        scrolled ? 'border-b border-line/70 bg-abyss/80 backdrop-blur-md' : 'border-b border-transparent',
+        scrolled || open ? 'border-b border-line/70 bg-abyss/85 backdrop-blur-md' : 'border-b border-transparent',
       )}
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-5 sm:px-8">
-        <a href="#top" className="font-display text-2xl text-gold-pale">
+        <Link
+          to={to('/')}
+          className="inline-flex min-h-11 items-center font-display text-2xl text-gold-pale transition-colors duration-300 hover:text-marble"
+          onClick={() => setOpen(false)}
+        >
           Josep
-        </a>
+        </Link>
 
-        <nav className="flex items-center gap-1 sm:gap-6">
-          <div className="hidden items-center gap-6 text-[15px] text-mist sm:flex">
-            <a className="transition-colors hover:text-marble" href="#work">{t.nav.work}</a>
-            <a className="transition-colors hover:text-marble" href="#about">{t.nav.about}</a>
-            <a className="transition-colors hover:text-marble" href="#contact">{t.nav.contact}</a>
-          </div>
+        <div className="flex items-center gap-3 sm:gap-6">
+          <nav aria-label={t.nav.main} className="hidden items-center gap-7 text-[15px] md:flex">
+            {links.map((l) => (
+              <NavLink
+                key={l.path}
+                to={to(l.path)}
+                end={l.end}
+                className={({ isActive }) =>
+                  cn('relative inline-flex min-h-11 items-center transition-colors duration-300 hover:text-marble', isActive ? 'text-marble' : 'text-mist')
+                }
+              >
+                {({ isActive }) => (
+                  <>
+                    {l.label}
+                    {/* El subrayado se desliza de un enlace a otro */}
+                    {isActive && (
+                      <motion.span
+                        layoutId="nav-active"
+                        aria-hidden="true"
+                        className="absolute inset-x-0 bottom-2 h-px bg-gold"
+                        transition={glide}
+                      />
+                    )}
+                  </>
+                )}
+              </NavLink>
+            ))}
+            <Link to={contactHref} className="inline-flex min-h-11 items-center text-mist transition-colors duration-300 hover:text-marble">
+              {t.nav.contact}
+            </Link>
+          </nav>
 
           <div role="group" aria-label={t.nav.lang} className="flex rounded-full border border-line p-0.5">
             {LANGS.map((l) => (
               <button
                 key={l}
                 type="button"
-                lang={LANG_LABEL[l].html}
+                lang={l}
                 aria-pressed={lang === l}
                 title={LANG_LABEL[l].name}
                 onClick={() => setLang(l)}
                 className={cn(
-                  'min-w-9 rounded-full px-2.5 py-1 text-[13px] font-medium transition-colors',
-                  lang === l ? 'bg-gold text-abyss' : 'text-mist hover:text-marble',
+                  'relative min-h-11 min-w-11 rounded-full px-2.5 text-[13px] font-medium transition-colors duration-300',
+                  lang === l ? 'text-white' : 'text-mist hover:text-marble',
                 )}
               >
-                {LANG_LABEL[l].short}
+                {/* La píldora se desliza de un idioma al otro */}
+                {lang === l && (
+                  <motion.span
+                    layoutId="lang-pill"
+                    aria-hidden="true"
+                    className="absolute inset-0 rounded-full bg-violet"
+                    transition={glide}
+                  />
+                )}
+                <span className="relative">{LANG_LABEL[l].short}</span>
               </button>
             ))}
           </div>
-        </nav>
+
+          <button
+            type="button"
+            aria-expanded={open}
+            aria-controls="mobile-nav"
+            aria-label={t.nav.menu}
+            onClick={() => setOpen((v) => !v)}
+            className="grid size-11 place-items-center rounded-full border border-line text-marble transition-colors duration-300 hover:border-violet-soft/70 md:hidden"
+          >
+            {open ? <X className="size-5" /> : <Menu className="size-5" />}
+          </button>
+        </div>
       </div>
+
+      <AnimatePresence initial={false}>
+        {open && (
+          <motion.nav
+            id="mobile-nav"
+            aria-label={t.nav.main}
+            className="overflow-hidden border-t border-line/70 md:hidden"
+            initial={reduce ? false : { height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={reduce ? undefined : { height: 0, opacity: 0 }}
+            transition={glide}
+          >
+            <ul className="mx-auto max-w-6xl px-5 py-3 sm:px-8">
+              {links.map((l) => (
+                <li key={l.path}>
+                  <NavLink
+                    to={to(l.path)}
+                    end={l.end}
+                    onClick={() => setOpen(false)}
+                    className={({ isActive }) =>
+                      cn(
+                        'block border-l-2 py-3 pl-4 text-lg transition-colors duration-300',
+                        isActive ? 'border-gold text-marble' : 'border-transparent text-mist',
+                      )
+                    }
+                  >
+                    {l.label}
+                  </NavLink>
+                </li>
+              ))}
+              <li>
+                <Link
+                  to={contactHref}
+                  onClick={() => setOpen(false)}
+                  className="block border-l-2 border-transparent py-3 pl-4 text-lg text-mist"
+                >
+                  {t.nav.contact}
+                </Link>
+              </li>
+            </ul>
+          </motion.nav>
+        )}
+      </AnimatePresence>
+
+      {/* Progreso de lectura de la página */}
+      {!reduce && (
+        <motion.div
+          aria-hidden="true"
+          style={{ scaleX: scrollYProgress }}
+          className="absolute inset-x-0 bottom-0 h-px origin-left bg-gradient-to-r from-violet-soft via-violet-soft to-gold"
+        />
+      )}
     </header>
   )
 }
