@@ -94,8 +94,8 @@ export const PROJECTS: Project[] = [
       },
       screenshots: [],
       invite: {
-        es: { title: '¿Necesitas una web así?', text: 'Landings y paneles de administración, por encargo o como parte de tu equipo.' },
-        en: { title: 'Need a site like this?', text: 'Landing pages and admin panels, freelance or as part of your team.' },
+        es: { title: '¿Necesitas una web así?', text: 'Landings y paneles de administración por encargo, para tu proyecto o tu empresa.' },
+        en: { title: 'Need a site like this?', text: 'Landing pages and admin panels, built to order for your project or business.' },
       },
       notes: {
         es: [
@@ -161,8 +161,8 @@ export const PROJECTS: Project[] = [
       },
       screenshots: [],
       invite: {
-        es: { title: '¿Un bot para tu servidor?', text: 'Música, comandos a medida o lo que necesite tu comunidad. Por encargo o programando en Python dentro de tu equipo.' },
-        en: { title: 'A bot for your server?', text: 'Music, custom commands or whatever your community needs. Freelance, or writing Python on your team.' },
+        es: { title: '¿Un bot para tu servidor?', text: 'Música, comandos a medida o lo que necesite tu comunidad. Por encargo, para tu proyecto o tu empresa.' },
+        en: { title: 'A bot for your server?', text: 'Music, custom commands or whatever your community needs. Built to order for your project or business.' },
       },
     },
   },
@@ -216,8 +216,8 @@ export const PROJECTS: Project[] = [
       },
       screenshots: [],
       invite: {
-        es: { title: '¿Una web como esta?', text: 'Hecha con React y TypeScript. Para tu proyecto o dentro de tu equipo.' },
-        en: { title: 'A site like this one?', text: 'Built with React and TypeScript. For your project or on your team.' },
+        es: { title: '¿Una web como esta?', text: 'Hecha con React y TypeScript. Para tu proyecto o tu empresa.' },
+        en: { title: 'A site like this one?', text: 'Built with React and TypeScript. For your project or your business.' },
       },
     },
   },
