@@ -203,6 +203,7 @@ Dos formas y nada más: rectángulos de esquina suave para contenedores y píldo
 
 ### Navigation
 - Enlaces en Bruma que pasan a Mármol en hover y cuando están activos. El enlace activo lleva un subrayado Oro Votivo de 1 px que se desliza de un enlace a otro.
+- "Contacto" es el único enlace de la navegación con forma propia: una píldora con borde Filete y texto Mármol, sin relleno; en hover el borde pasa a Violeta Lunar. Es la acción a la que lleva todo el sitio.
 - Selector de idioma: dos opciones en una píldora con borde; la activa se rellena de Violeta Ritual y el relleno se desliza al cambiar.
 - En móvil, un botón redondo de 44 px despliega la lista de enlaces bajo la cabecera; se cierra con Escape y al navegar.
 - Bajo la cabecera, una línea de 1 px indica el progreso de lectura de la página.

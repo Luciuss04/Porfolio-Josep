@@ -78,7 +78,11 @@ export function Header() {
                 )}
               </NavLink>
             ))}
-            <Link to={contactHref} className="inline-flex min-h-11 items-center text-mist transition-colors duration-300 hover:text-marble">
+            {/* El contacto es el destino del sitio: se distingue con un contorno, sin relleno */}
+            <Link
+              to={contactHref}
+              className="inline-flex min-h-11 items-center rounded-full border border-line px-4 text-marble transition-colors duration-300 hover:border-violet-soft/70 hover:text-violet-pale focus-visible:border-violet-soft/70 focus-visible:text-violet-pale"
+            >
               {t.nav.contact}
             </Link>
           </nav>
@@ -153,11 +157,11 @@ export function Header() {
                   </NavLink>
                 </li>
               ))}
-              <li>
+              <li className="pb-2 pl-4 pt-3">
                 <Link
                   to={contactHref}
                   onClick={() => setOpen(false)}
-                  className="block border-l-2 border-transparent py-3 pl-4 text-lg text-mist"
+                  className="inline-flex min-h-11 items-center rounded-full border border-line px-5 text-lg text-marble transition-colors duration-300 hover:border-violet-soft/70 hover:text-violet-pale"
                 >
                   {t.nav.contact}
                 </Link>
