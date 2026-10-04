@@ -1,0 +1,366 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-04T13:04:22+00:00",
+  "title": "Design System: Porfolio Josep",
+  "extensions": {
+    "colorMeta": {
+      "violeta-ritual": {
+        "role": "primary",
+        "displayName": "Violeta Ritual",
+        "canonical": "#7c3aed",
+        "tonalRamp": [
+          "#160042",
+          "#3a008f",
+          "#5500b8",
+          "#7128de",
+          "#9257ff",
+          "#b680ff",
+          "#d8a6ff",
+          "#f2dbff"
+        ]
+      },
+      "violeta-profundo": {
+        "role": "primary",
+        "displayName": "Violeta Profundo",
+        "canonical": "#6d28d9",
+        "tonalRamp": [
+          "#150041",
+          "#39008e",
+          "#5400b6",
+          "#6f2cdc",
+          "#915aff",
+          "#b482ff",
+          "#d6a7ff",
+          "#f1dcff"
+        ]
+      },
+      "violeta-lunar": {
+        "role": "primary",
+        "displayName": "Violeta Lunar",
+        "canonical": "#a78bfa",
+        "tonalRamp": [
+          "#10002e",
+          "#30006a",
+          "#4d2990",
+          "#6a4bb4",
+          "#8c6fdc",
+          "#b195ff",
+          "#d3b8ff",
+          "#f1e3ff"
+        ]
+      },
+      "violeta-palido": {
+        "role": "primary",
+        "displayName": "Violeta Pálido",
+        "canonical": "#c9b8ff",
+        "tonalRamp": [
+          "#0e0421",
+          "#2c1751",
+          "#4a3874",
+          "#685796",
+          "#8b7abc",
+          "#af9ee3",
+          "#d2c1ff",
+          "#f1e7ff"
+        ]
+      },
+      "oro-votivo": {
+        "role": "secondary",
+        "displayName": "Oro Votivo",
+        "canonical": "#d6a940",
+        "tonalRamp": [
+          "#190500",
+          "#421b00",
+          "#643b00",
+          "#855b00",
+          "#aa7e00",
+          "#d0a43a",
+          "#f5c761",
+          "#ffebb2"
+        ]
+      },
+      "oro-palido": {
+        "role": "secondary",
+        "displayName": "Oro Pálido",
+        "canonical": "#f0d68a",
+        "tonalRamp": [
+          "#140900",
+          "#382200",
+          "#594200",
+          "#786008",
+          "#9c8438",
+          "#c2a95e",
+          "#e6cc80",
+          "#fdeec2"
+        ]
+      },
+      "abismo": {
+        "role": "neutral",
+        "displayName": "Abismo",
+        "canonical": "#09070f",
+        "tonalRamp": [
+          "#0b0a0f",
+          "#27252f",
+          "#46434e",
+          "#64616d",
+          "#878490",
+          "#aca9b5",
+          "#cfcbd9",
+          "#efedf5"
+        ]
+      },
+      "piedra-nocturna": {
+        "role": "neutral",
+        "displayName": "Piedra Nocturna",
+        "canonical": "#120e1d",
+        "tonalRamp": [
+          "#0c0a12",
+          "#272334",
+          "#464254",
+          "#646073",
+          "#878397",
+          "#aca7bd",
+          "#cfcae0",
+          "#efecfa"
+        ]
+      },
+      "filete": {
+        "role": "neutral",
+        "displayName": "Filete",
+        "canonical": "#2b2340",
+        "tonalRamp": [
+          "#0c0817",
+          "#29213d",
+          "#473f5f",
+          "#655d7f",
+          "#8880a3",
+          "#ada5c9",
+          "#d0c7ed",
+          "#f0ebff"
+        ]
+      },
+      "marmol": {
+        "role": "neutral",
+        "displayName": "Mármol",
+        "canonical": "#ece8f2",
+        "tonalRamp": [
+          "#0c0a0e",
+          "#28252c",
+          "#47434b",
+          "#65616a",
+          "#88848d",
+          "#ada9b2",
+          "#d0ccd5",
+          "#f0edf3"
+        ]
+      },
+      "bruma": {
+        "role": "neutral",
+        "displayName": "Bruma",
+        "canonical": "#a59fb8",
+        "tonalRamp": [
+          "#0c0913",
+          "#282336",
+          "#474157",
+          "#655f76",
+          "#88829a",
+          "#ada7c0",
+          "#d0c9e3",
+          "#efecfc"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Solo el nombre en el hero."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Título de página y titulares de sección."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Nombres de proyecto y bloques de detalle."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Texto general, con párrafos de 65–75 caracteres."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Metadatos en versalitas: tipo, año, estado, cabeceras de ficha."
+      }
+    },
+    "shadows": [
+      {
+        "name": "resplandor-de-accion",
+        "value": "0 12px 28px -12px color-mix(in oklab, #7c3aed 80%, transparent)",
+        "purpose": "Bajo el botón primario y el filtro seleccionado, que no tienen borde."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-soft",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Curva única de todas las transiciones."
+      },
+      {
+        "name": "estado",
+        "value": "300ms",
+        "purpose": "Cambios de estado: hover, foco, selección."
+      },
+      {
+        "name": "pagina-entrada",
+        "value": "280ms",
+        "purpose": "Entrada de la página nueva."
+      },
+      {
+        "name": "pagina-salida",
+        "value": "160ms",
+        "purpose": "Salida de la página anterior."
+      },
+      {
+        "name": "hero-nombre",
+        "value": "750ms",
+        "purpose": "Momento protagonista: el nombre sube línea a línea."
+      },
+      {
+        "name": "ambiente",
+        "value": "28s–40s",
+        "purpose": "Halos del fondo y retícula del hero."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Botón primario",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Acción principal de cada bloque: ver proyectos, ver proyecto, escribir.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">Ver proyectos</a>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; min-height: 44px; padding: 10px 20px; border-radius: 9999px; background: var(--color-violet); color: #fff; font-size: 15px; font-weight: 500; text-decoration: none; font-family: 'Instrument Sans', system-ui, sans-serif; transition: background-color .3s cubic-bezier(.16,1,.3,1), box-shadow .3s cubic-bezier(.16,1,.3,1), translate .3s cubic-bezier(.16,1,.3,1); } .ds-btn-primary:hover, .ds-btn-primary:focus-visible { background: var(--color-violet-deep); translate: 0 -2px; box-shadow: 0 12px 28px -12px color-mix(in oklab, var(--color-violet) 80%, transparent); } .ds-btn-primary:active { translate: 0 0; scale: .97; }"
+    },
+    {
+      "name": "Botón de contorno",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Acciones secundarias: ver web, ver código, copiar email.",
+      "html": "<a class=\"ds-btn-outline\" href=\"#\">Ver código</a>",
+      "css": ".ds-btn-outline { display: inline-flex; align-items: center; min-height: 44px; padding: 10px 20px; border-radius: 9999px; border: 1px solid var(--color-line); background: color-mix(in oklab, var(--color-abyss) 40%, transparent); color: var(--color-marble); font-size: 15px; font-weight: 500; text-decoration: none; font-family: 'Instrument Sans', system-ui, sans-serif; transition: color .3s cubic-bezier(.16,1,.3,1), border-color .3s cubic-bezier(.16,1,.3,1), translate .3s cubic-bezier(.16,1,.3,1); } .ds-btn-outline:hover, .ds-btn-outline:focus-visible { border-color: color-mix(in oklab, var(--color-violet-soft) 70%, transparent); color: var(--color-violet-pale); translate: 0 -2px; }"
+    },
+    {
+      "name": "Filtro",
+      "kind": "chip",
+      "refersTo": "chip-filter",
+      "description": "Opción de filtro de selección única en el índice de proyectos.",
+      "html": "<div class=\"ds-filters\"><button class=\"ds-filter ds-filter-on\" aria-pressed=\"true\">Todos</button><button class=\"ds-filter\" aria-pressed=\"false\">Java</button><button class=\"ds-filter\" aria-pressed=\"false\">Python</button></div>",
+      "css": ".ds-filters { display: flex; gap: 8px; } .ds-filter { min-height: 44px; padding: 0 14px; border-radius: 9999px; border: 1px solid var(--color-line); background: transparent; color: var(--color-marble); font-size: 14px; cursor: pointer; font-family: 'Instrument Sans', system-ui, sans-serif; transition: color .3s, border-color .3s; } .ds-filter:hover, .ds-filter:focus-visible { border-color: color-mix(in oklab, var(--color-violet-soft) 70%, transparent); color: var(--color-violet-pale); } .ds-filter-on, .ds-filter-on:hover { border-color: transparent; background: var(--color-violet); color: #fff; box-shadow: 0 8px 24px -10px color-mix(in oklab, var(--color-violet) 80%, transparent); }"
+    },
+    {
+      "name": "Etiqueta de tecnología",
+      "kind": "chip",
+      "refersTo": "tag-tech",
+      "description": "Tecnología usada en un proyecto; no es interactiva.",
+      "html": "<ul class=\"ds-tags\"><li class=\"ds-tag\">Python</li><li class=\"ds-tag\">discord.py</li><li class=\"ds-tag\">GitHub Actions</li></ul>",
+      "css": ".ds-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; } .ds-tag { padding: 4px 12px; border-radius: 9999px; border: 1px solid var(--color-line); background: color-mix(in oklab, var(--color-abyss) 40%, transparent); color: var(--color-mist); font-size: 13px; font-family: 'Instrument Sans', system-ui, sans-serif; }"
+    },
+    {
+      "name": "Tarjeta de proyecto",
+      "kind": "card",
+      "refersTo": "card-spotlight",
+      "description": "Tarjeta de proyecto destacado; sube y su borde se ilumina con la atención.",
+      "html": "<article class=\"ds-card\"><h3 class=\"ds-card-title\">AteneaUI</h3><p class=\"ds-card-meta\">Bot · 2025 · Terminado</p><p class=\"ds-card-text\">Bot de música para Discord con slash commands, reproducción desde YouTube y soporte de enlaces de Spotify.</p></article>",
+      "css": ".ds-card { max-width: 360px; padding: 28px; border-radius: 16px; border: 1px solid var(--color-line); background: color-mix(in oklab, var(--color-surface) 70%, transparent); transition: translate .3s cubic-bezier(.16,1,.3,1), border-color .3s cubic-bezier(.16,1,.3,1); } .ds-card:hover { translate: 0 -4px; border-color: color-mix(in oklab, var(--color-violet-soft) 50%, transparent); } .ds-card-title { margin: 0; font-family: Marcellus, Georgia, serif; font-weight: 400; font-size: 30px; color: var(--color-marble); } .ds-card-meta { margin: 12px 0 0; font-size: 12px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--color-violet-pale); font-family: 'Instrument Sans', system-ui, sans-serif; } .ds-card-text { margin: 16px 0 0; color: var(--color-mist); font-size: 17px; line-height: 1.6; font-family: 'Instrument Sans', system-ui, sans-serif; }"
+    },
+    {
+      "name": "Navegación",
+      "kind": "nav",
+      "refersTo": "",
+      "description": "Enlaces de cabecera con subrayado dorado en el activo y selector de idioma.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-link ds-nav-on\" href=\"#\">Inicio</a><a class=\"ds-nav-link\" href=\"#\">Proyectos</a><a class=\"ds-nav-link\" href=\"#\">Sobre mí</a><span class=\"ds-lang\"><span class=\"ds-lang-opt ds-lang-on\">ES</span><span class=\"ds-lang-opt\">EN</span></span></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; gap: 28px; font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 15px; } .ds-nav-link { position: relative; display: inline-flex; align-items: center; min-height: 44px; color: var(--color-mist); text-decoration: none; transition: color .3s; } .ds-nav-link:hover, .ds-nav-link:focus-visible, .ds-nav-on { color: var(--color-marble); } .ds-nav-on::after { content: ''; position: absolute; left: 0; right: 0; bottom: 8px; height: 1px; background: var(--color-gold); } .ds-lang { display: inline-flex; padding: 2px; border: 1px solid var(--color-line); border-radius: 9999px; } .ds-lang-opt { display: inline-grid; place-items: center; min-width: 44px; min-height: 44px; border-radius: 9999px; font-size: 13px; font-weight: 500; color: var(--color-mist); } .ds-lang-on { background: var(--color-violet); color: #fff; }"
+    },
+    {
+      "name": "Fila del índice de proyectos",
+      "kind": "custom",
+      "refersTo": "",
+      "description": "Fila escaneable con año, título, resumen, tecnologías, tipo y estado.",
+      "html": "<div class=\"ds-row\"><span class=\"ds-row-year\">2026</span><div><h3 class=\"ds-row-title\">PoseidonUI <span class=\"ds-row-mark\">Destacado</span></h3><p class=\"ds-row-text\">La web de PoseidonUI: landing, pantalla de acceso, panel de administración y páginas legales.</p><p class=\"ds-row-tech\">HTML/CSS · Tailwind CSS · JavaScript</p></div><div class=\"ds-row-meta\">Web<br><span class=\"ds-row-status\">Activo</span></div></div>",
+      "css": ".ds-row { position: relative; display: grid; grid-template-columns: 5.5rem minmax(0,1fr) 9rem; gap: 32px; padding: 24px 16px; border-top: 1px solid var(--color-line); border-bottom: 1px solid var(--color-line); font-family: 'Instrument Sans', system-ui, sans-serif; transition: background-color .3s; } .ds-row::before { content: ''; position: absolute; inset: 0 auto 0 0; width: 1px; background: var(--color-gold); scale: 1 0; transform-origin: top; transition: scale .3s cubic-bezier(.16,1,.3,1); } .ds-row:hover { background: color-mix(in oklab, var(--color-surface) 60%, transparent); } .ds-row:hover::before { scale: 1 1; } .ds-row-year { padding-top: 10px; font-size: 12px; font-weight: 500; letter-spacing: .14em; color: var(--color-mist); } .ds-row-title { display: flex; align-items: center; gap: 12px; margin: 0; font-family: Marcellus, Georgia, serif; font-weight: 400; font-size: 24px; color: var(--color-marble); transition: color .3s; } .ds-row:hover .ds-row-title { color: var(--color-gold-pale); } .ds-row-mark { padding: 2px 10px; border: 1px solid color-mix(in oklab, var(--color-gold) 50%, transparent); border-radius: 9999px; font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; color: var(--color-gold-pale); } .ds-row-text { margin: 8px 0 0; color: var(--color-mist); font-size: 17px; line-height: 1.6; } .ds-row-tech { margin: 12px 0 0; font-size: 14px; color: var(--color-violet-pale); } .ds-row-meta { padding-top: 8px; font-size: 14px; line-height: 1.7; color: var(--color-marble); } .ds-row-status { color: var(--color-mist); } .ds-row-status::before { content: ''; display: inline-block; width: 6px; height: 6px; margin-right: 8px; border-radius: 9999px; background: var(--color-gold); vertical-align: middle; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "El Templo Nocturno",
+    "overview": "Arquitectura clásica vista de noche. La tipografía de los titulares recuerda a una inscripción en piedra, el oro aparece como un detalle grabado y la luz violeta entra de lado, despacio, sin iluminarlo todo. El sitio es oscuro porque el contenido son capturas de interfaces oscuras y nombres con peso mitológico; el fondo se retira para que los proyectos sean lo único que brilla.\n\nLos componentes son refinados y contenidos: bordes finos, respuesta suave, nada reclama atención hasta que se interactúa con ello. La densidad es baja y el espacio es generoso; cada página tiene pocos elementos y cada uno está acabado.\n\nEste sistema rechaza explícitamente dos cosas: el aspecto de **plantilla de estudiante** (barras de porcentaje de skills, filas de iconos de tecnologías, secciones de relleno) y el **neón gamer** (brillos saturados, partículas, efectos 3D, colores chillones).",
+    "keyCharacteristics": [
+      "Fondo casi negro con tinte violeta; la luz es ambiental y lenta.",
+      "Violeta para lo que se puede pulsar; oro para lo que se quiere señalar.",
+      "Titulares en serif de inscripción, texto en sans humanista.",
+      "Superficies planas con borde fino; la elevación solo aparece como respuesta.",
+      "Un momento de animación protagonista (la entrada del nombre) y el resto, discreto."
+    ],
+    "rules": [
+      {
+        "name": "La Regla del Oro Escaso",
+        "body": "El oro nunca rellena una superficie grande ni un botón de uso habitual. Aparece en líneas de 1 px y en texto destacado; su escasez es lo que lo hace valer.",
+        "section": "colors"
+      },
+      {
+        "name": "La Regla del Violeta Pulsable",
+        "body": "Si algo está relleno de violeta, se puede pulsar o está seleccionado. El violeta no se usa como decoración de texto corrido.",
+        "section": "colors"
+      },
+      {
+        "name": "La Regla del Título Solo",
+        "body": "Ningún titular lleva un antetítulo encima. Los metadatos van debajo del título o en la ficha lateral.",
+        "section": "typography"
+      },
+      {
+        "name": "La Regla del Texto Liso",
+        "body": "El texto es de un color sólido. Nada de gradientes en letras; el énfasis sale del tamaño o del color.",
+        "section": "typography"
+      },
+      {
+        "name": "La Regla de la Elevación Única",
+        "body": "Un elemento se eleva con borde o con sombra, nunca con los dos. Las tarjetas tienen borde, así que al pasar el cursor suben 4 px y su borde se ilumina, sin sombra.",
+        "section": "elevation"
+      },
+      {
+        "name": "La Regla del Reposo Plano",
+        "body": "En reposo nada flota. La elevación es una respuesta a hover o foco y desaparece al salir.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** usar Violeta Ritual solo en rellenos pulsables o seleccionados, y Oro Votivo solo en líneas de 1 px y texto destacado.",
+      "**Do** dar a hover y a foco de teclado exactamente el mismo tratamiento visual.",
+      "**Do** mantener todos los controles en 44 px de alto mínimo.",
+      "**Do** poner los metadatos de un proyecto debajo de su título, en versalitas pequeñas.",
+      "**Do** limitar el radio de las tarjetas a 16 px y reservar las píldoras para controles.",
+      "**Do** marcar con `motion-safe` cualquier desplazamiento, para que desaparezca con movimiento reducido."
+    ],
+    "donts": [
+      "**Don't** añadir barras de porcentaje de skills, filas de iconos de tecnologías ni secciones de relleno: es el aspecto de plantilla de estudiante que este sistema rechaza.",
+      "**Don't** usar brillos saturados, partículas, efectos 3D ni colores chillones: nada de neón gamer.",
+      "**Don't** combinar borde y sombra en el mismo elemento.",
+      "**Don't** usar texto con gradiente ni antetítulos sobre los titulares.",
+      "**Don't** usar desenfoque de fondo como decoración; solo la cabecera lo lleva, para que el contenido que pasa por debajo no estorbe.",
+      "**Don't** añadir una segunda entrada animada larga: el nombre del hero es el único momento protagonista."
+    ]
+  }
+}
