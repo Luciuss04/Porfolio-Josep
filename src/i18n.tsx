@@ -142,7 +142,7 @@ const es: Dict = {
   },
   contact: {
     title: '¿Construimos algo juntos?',
-    sub: 'Estoy abierto a proyectos web y bots. Escríbeme por correo o por cualquiera de estas redes.',
+    sub: 'Ahora mismo acepto encargos de webs y bots de Discord, en remoto. Cuéntame qué necesitas.',
     copy: 'Copiar email',
     copied: 'Email copiado',
     elsewhere: 'También estoy en',
@@ -236,7 +236,7 @@ const en: Dict = {
   },
   contact: {
     title: 'Shall we build something together?',
-    sub: 'Open to web and bot projects. Write to me by email or on any of these networks.',
+    sub: 'I’m currently taking on freelance work: websites and Discord bots, fully remote. Tell me what you need.',
     copy: 'Copy email',
     copied: 'Email copied',
     elsewhere: 'Also on',
