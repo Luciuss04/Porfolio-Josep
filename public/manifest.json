@@ -1,0 +1,9 @@
+{
+  "name": "Josep Pérez Morente · Portfolio",
+  "short_name": "Josep",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#050c22",
+  "theme_color": "#050c22",
+  "icons": [{ "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml" }]
+}

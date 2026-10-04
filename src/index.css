@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+/* ── Paleta: el búho dorado de AteneaUI sobre azul de medianoche ── */
+@theme {
+  --color-abyss: #050c22;      /* fondo */
+  --color-navy: #0b1a44;       /* superficies */
+  --color-line: #1d2c5c;       /* bordes */
+  --color-gold: #d6a940;       /* acento principal */
+  --color-gold-pale: #f0d68a;  /* brillos */
+  --color-marble: #ece6d6;     /* texto */
+  --color-mist: #95a1c3;       /* texto secundario */
+
+  --font-display: "Marcellus", "Trajan Pro", Georgia, serif;
+  --font-sans: "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-jp: "Noto Serif JP", "Hiragino Mincho ProN", serif;
+}
+
+/* Variables que esperan los componentes de shadcn / 21st.dev */
+:root {
+  --background: var(--color-abyss);
+  --foreground: var(--color-marble);
+  --card: var(--color-navy);
+  --card-foreground: var(--color-marble);
+  --primary: var(--color-gold);
+  --primary-foreground: var(--color-abyss);
+  --muted: #0f1f4d;
+  --muted-foreground: var(--color-mist);
+  --border: var(--color-line);
+  --ring: var(--color-gold-pale);
+  --radius: 1rem;
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+  background: var(--color-abyss);
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+body {
+  margin: 0;
+  background: var(--color-abyss);
+  color: var(--color-marble);
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+html:lang(ja) body { line-height: 1.85; }
+html:lang(ja) .font-display { font-family: var(--font-display), var(--font-jp); }
+
+::selection { background: var(--color-gold); color: var(--color-abyss); }
+
+:focus-visible {
+  outline: 2px solid var(--color-gold-pale);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* Oro grabado: gradiente vertical como en las letras del logo */
+.text-engraved {
+  background: linear-gradient(180deg, #f6e3a1 0%, #e1b955 42%, #b8862a 70%, #e8c66b 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
