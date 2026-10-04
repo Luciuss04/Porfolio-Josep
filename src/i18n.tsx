@@ -78,7 +78,7 @@ const es: Dict = {
     ctaContact: 'Escríbeme',
     facts: {
       build: 'Qué construyo',
-      buildValue: 'Webs, bots de Discord y programas de consola',
+      buildValue: 'Webs, bots de Discord y herramientas de consola',
       stack: 'Con qué',
       code: 'Dónde está el código',
     },
@@ -172,7 +172,7 @@ const en: Dict = {
     ctaContact: 'Get in touch',
     facts: {
       build: 'What I build',
-      buildValue: 'Websites, Discord bots and console programs',
+      buildValue: 'Websites, Discord bots and command-line tools',
       stack: 'With what',
       code: 'Where the code lives',
     },

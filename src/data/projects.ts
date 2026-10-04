@@ -217,7 +217,7 @@ export const PROJECTS: Project[] = [
       screenshots: [],
       invite: {
         es: { title: '¿Una web como esta?', text: 'Hecha con React y TypeScript. Para tu proyecto o tu empresa.' },
-        en: { title: 'A site like this one?', text: 'Built with React and TypeScript. For your project or your business.' },
+        en: { title: 'A site like this one?', text: 'Built with React and TypeScript. For your project or business.' },
       },
     },
   },
