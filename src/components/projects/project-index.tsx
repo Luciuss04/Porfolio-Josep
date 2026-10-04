@@ -35,7 +35,7 @@ export function ProjectIndex({ projects }: { projects: Project[] }) {
               className="border-b border-line"
             >
               {/* La atenuación va en este contenedor para no chocar con la opacidad que anima la fila */}
-              <div className="group/row relative grid gap-x-8 gap-y-3 px-1 py-6 transition-[opacity,background-color] duration-300 hover:bg-surface/60 focus-within:bg-surface/60 group-hover/list:opacity-50 group-hover/list:hover:opacity-100 group-has-[:focus-visible]/list:opacity-50 group-has-[:focus-visible]/list:focus-within:opacity-100 sm:px-4 md:grid-cols-[5.5rem_minmax(0,1fr)_11rem_1.5rem] lg:grid-cols-[5.5rem_minmax(0,1fr)_9rem_11rem_1.5rem]">
+              <div className="group/row relative grid gap-x-8 gap-y-3 px-1 py-6 transition-[opacity,background-color] duration-300 hover:bg-surface/60 focus-within:bg-surface/60 group-hover/list:opacity-80 group-hover/list:hover:opacity-100 group-has-[:focus-visible]/list:opacity-80 group-has-[:focus-visible]/list:focus-within:opacity-100 sm:px-4 md:grid-cols-[5.5rem_minmax(0,1fr)_11rem_1.5rem] lg:grid-cols-[5.5rem_minmax(0,1fr)_9rem_11rem_1.5rem]">
                 {/* Filete dorado que crece a la izquierda de la fila activa */}
                 <span
                   aria-hidden="true"

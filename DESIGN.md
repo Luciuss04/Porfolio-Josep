@@ -199,7 +199,7 @@ Dos formas y nada más: rectángulos de esquina suave para contenedores y píldo
 - **Shadow Strategy:** ninguna; ver Elevation & Depth.
 - **Border:** 1 px Filete; al pasar el cursor, un brillo Violeta Lunar recorre el borde siguiendo al puntero.
 - **Internal Padding:** 28 px, 36 px a partir de 640 px.
-- **Comportamiento:** la tarjeta con la atención sube 4 px y su imagen se acerca un 4 %; las tarjetas vecinas bajan al 60 % de opacidad.
+- **Comportamiento:** la tarjeta con la atención sube 4 px y su imagen se acerca un 4 %; las tarjetas vecinas bajan al 80 % de opacidad, el mínimo que mantiene el texto secundario por encima de 4,5:1.
 
 ### Navigation
 - Enlaces en Bruma que pasan a Mármol en hover y cuando están activos. El enlace activo lleva un subrayado Oro Votivo de 1 px que se desliza de un enlace a otro.
@@ -208,7 +208,7 @@ Dos formas y nada más: rectángulos de esquina suave para contenedores y píldo
 - Bajo la cabecera, una línea de 1 px indica el progreso de lectura de la página.
 
 ### Fila del índice de proyectos
-El componente propio del sitio. Cada fila muestra año, título, resumen, tecnologías, tipo y estado. Al pasar el cursor o enfocar una fila, las demás bajan al 50 % de opacidad, un filete dorado crece en su borde izquierdo, el título pasa a Oro Pálido y, si el proyecto tiene portada, aparece una miniatura. Al filtrar, las filas entran, salen y se recolocan con una transición.
+El componente propio del sitio. Cada fila muestra año, título, resumen, tecnologías, tipo y estado. Al pasar el cursor o enfocar una fila, las demás bajan al 80 % de opacidad (nunca menos: por debajo el texto secundario pierde el contraste AA), un filete dorado crece en su borde izquierdo, el título pasa a Oro Pálido y, si el proyecto tiene portada, aparece una miniatura. Al filtrar, las filas entran, salen y se recolocan con una transición.
 
 ### Movimiento
 - **Momento protagonista:** en el hero, el nombre sube línea a línea desde detrás de una máscara (0,75 s). Es la única entrada larga del sitio.

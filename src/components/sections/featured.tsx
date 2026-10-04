@@ -60,9 +60,10 @@ function CardBody({ project, big }: { project: Project; big?: boolean }) {
   )
 }
 
-// Al pasar por una tarjeta (o enfocarla), las otras dos ceden protagonismo
+// Al pasar por una tarjeta (o enfocarla), las otras dos ceden protagonismo. No bajar del 80 %:
+// por debajo, el texto secundario pierde el contraste AA
 const card =
-  'h-full group-hover/bento:opacity-60 group-hover/bento:hover:opacity-100 group-has-[:focus-visible]/bento:opacity-60 group-has-[:focus-visible]/bento:focus-within:opacity-100'
+  'h-full group-hover/bento:opacity-80 group-hover/bento:hover:opacity-100 group-has-[:focus-visible]/bento:opacity-80 group-has-[:focus-visible]/bento:focus-within:opacity-100'
 // La imagen se acerca despacio mientras la tarjeta tiene la atención
 const zoom =
   'transition-transform duration-700 ease-soft motion-safe:group-hover/spot:scale-[1.04] motion-safe:group-focus-within/spot:scale-[1.04]'
