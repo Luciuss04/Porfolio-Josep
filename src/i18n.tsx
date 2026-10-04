@@ -134,7 +134,7 @@ const es: Dict = {
   },
   about: {
     title: 'Sobre mí',
-    p1: 'Me estoy formando como desarrollador de aplicaciones multiplataforma. Me gusta llevar una idea desde el primer boceto hasta algo que funciona: una interfaz clara, código ordenado y detalles cuidados.',
+    p1: 'Me estoy formando como desarrollador de aplicaciones multiplataforma (DAM). Me gusta llevar una idea desde el primer boceto hasta algo que funciona: una interfaz clara, código ordenado y detalles cuidados.',
     p2: 'En clase trabajo sobre todo con Java. Por mi cuenta hago webs con React y TypeScript y bots de Discord con Python.',
     interestsTitle: 'Lo que me interesa',
     interests: ['Desarrollo frontend', 'Inteligencia artificial', 'Diseño de interfaces', 'Diseño de videojuegos'],
@@ -228,7 +228,7 @@ const en: Dict = {
   },
   about: {
     title: 'About',
-    p1: 'I am training as a cross-platform application developer. I like taking an idea from the first sketch to something that works: a clear interface, tidy code and careful details.',
+    p1: 'I am training as a cross-platform application developer. I like taking an idea from the first sketch to something that works: a clear interface, tidy code and polished details.',
     p2: 'In class I mostly work with Java. On my own I build websites with React and TypeScript and Discord bots with Python.',
     interestsTitle: 'What interests me',
     interests: ['Frontend development', 'Artificial intelligence', 'Interface design', 'Game design'],
